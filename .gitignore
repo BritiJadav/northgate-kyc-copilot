@@ -29,6 +29,7 @@ npm-debug.log*
 credentials.json
 gcp-key.json
 .gcloud/
+northgate-kyc-copilot.zip
 
 # Operating System & IDE
 .DS_Store
