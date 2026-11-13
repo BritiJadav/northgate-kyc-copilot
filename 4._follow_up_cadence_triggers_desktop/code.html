@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Northgate Bank Document Chaser Copilot - Follow-Up Cadence &amp; Triggers</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Font: Montserrat -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Forms & Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#32353c",
+            "tertiary-container": "#ffcd80",
+            "error-container": "#93000a",
+            "primary-fixed": "#65ff90",
+            "surface-container-high": "#272a31",
+            "tertiary-fixed-dim": "#efbf73",
+            "surface-tint": "#00e46d",
+            "primary-fixed-dim": "#00e46d",
+            "on-primary-fixed": "#00210a",
+            "text-primary": "#FFFFFF",
+            "border-subtle": "rgba(255, 255, 255, 0.08)",
+            "secondary-fixed": "#e6deff",
+            "tertiary-fixed": "#ffddae",
+            "background": "#10131a",
+            "text-muted": "#64748B",
+            "surface-container": "#1d2026",
+            "inverse-on-surface": "#2e3037",
+            "surface-variant": "#32353c",
+            "on-secondary": "#30009b",
+            "outline-variant": "#3b4b3c",
+            "surface": "#10131a",
+            "surface-dim": "#10131a",
+            "secondary-container": "#4f00f1",
+            "on-surface-variant": "#bacbb8",
+            "on-tertiary": "#432c00",
+            "inverse-primary": "#006d31",
+            "error": "#ffb4ab",
+            "border-prominent": "rgba(255, 255, 255, 0.16)",
+            "surface-container-lowest": "#0b0e14",
+            "on-primary-container": "#006b2f",
+            "on-surface": "#e1e2eb",
+            "on-background": "#e1e2eb",
+            "secondary-fixed-dim": "#c9beff",
+            "surface-container-low": "#191c22",
+            "on-error": "#690005",
+            "on-primary-fixed-variant": "#005323",
+            "surface-canvas": "#0B0E14",
+            "surface-bright": "#363940",
+            "outline": "#849584",
+            "accent-electric": "#02F576",
+            "on-tertiary-container": "#795513",
+            "surface-elevated": "#141824",
+            "inverse-surface": "#e1e2eb",
+            "text-secondary": "#9CA3AF",
+            "accent-violet": "#5F2CFF",
+            "on-secondary-container": "#c5baff",
+            "on-secondary-fixed-variant": "#4600d8",
+            "on-tertiary-fixed-variant": "#604100",
+            "tertiary": "#ffefdc",
+            "on-secondary-fixed": "#1b0062",
+            "surface-overlay": "#1E2435",
+            "on-primary": "#003916",
+            "primary-container": "#02f576",
+            "primary": "#c9ffcd",
+            "secondary": "#c9beff",
+            "on-tertiary-fixed": "#281800",
+            "on-error-container": "#ffdad6"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "margin": "2rem",
+            "gutter-mobile": "1rem",
+            "margin-mobile": "1rem",
+            "gutter": "1.5rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "label-md": ["Montserrat"],
+            "headline-sm": ["Montserrat"],
+            "label-caps": ["Montserrat"],
+            "label-lg": ["Montserrat"],
+            "body-md": ["Montserrat"],
+            "body-lg": ["Montserrat"],
+            "display-hero": ["Montserrat"],
+            "body-xl": ["Montserrat"],
+            "headline-lg": ["Montserrat"],
+            "display-hero-mobile": ["Montserrat"],
+            "headline-md": ["Montserrat"],
+            "headline-xl": ["Montserrat"],
+            "headline-xl-mobile": ["Montserrat"]
+          },
+          "fontSize": {
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "display-hero": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "body-xl": ["18px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "800" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Ambient neon pulse */
+    @keyframes neon-pulse {
+      0%, 100% { opacity: 0.15; }
+      50% { opacity: 0.35; }
+    }
+    .ambient-glow {
+      animation: neon-pulse 4s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-surface-canvas text-text-primary min-h-screen selection:bg-accent-electric selection:text-surface-canvas font-body-md text-body-md overflow-x-hidden">
+<!-- ================= TOP APP BAR ================= -->
+<header class="bg-surface-canvas/80 backdrop-blur-md dark:bg-surface-canvas/80 docked full-width top-0 sticky z-50 border-b border-border-subtle shadow-none">
+<div class="w-full px-space-xl flex items-center justify-between h-16 max-w-[1440px] mx-auto">
+<!-- Brand & Search -->
+<div class="flex items-center gap-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-overlay border border-border-prominent flex items-center justify-center text-accent-electric font-headline-sm text-headline-sm">
+<span class="material-symbols-outlined" data-icon="token">token</span>
+</div>
+<span class="font-headline-md text-headline-md font-bold text-text-primary tracking-tight">Northgate Bank Document Chaser Copilot</span>
+</div>
+<!-- Search Bar on Left -->
+<div class="relative w-64 hidden xl:block">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-text-muted text-lg" data-icon="search">search</span>
+<input class="w-full bg-surface-elevated border border-border-subtle rounded-lg pl-9 pr-3 py-1.5 font-body-md text-body-md text-text-primary placeholder:text-text-muted focus:border-accent-electric focus:ring-1 focus:ring-accent-electric focus:outline-none transition-colors" placeholder="Search case, trust, or RM..." type="text"/>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="hidden lg:flex items-center gap-space-md">
+<a class="text-text-secondary hover:text-text-primary pb-1 transition-colors font-label-md text-label-md" href="#">Missing Documents Matrix</a>
+<a class="text-text-secondary hover:text-text-primary pb-1 transition-colors font-label-md text-label-md" href="#">AI Draft Chase Email</a>
+<a class="text-text-secondary hover:text-text-primary pb-1 transition-colors font-label-md text-label-md" href="#">RM Review &amp; Send</a>
+<a class="border-b-2 border-accent-electric text-accent-electric font-semibold pb-1 font-label-md text-label-md" href="#">Follow-Up Cadence</a>
+<a class="text-text-secondary hover:text-text-primary pb-1 transition-colors font-label-md text-label-md" href="#">Pilot Metrics</a>
+<a class="text-text-secondary hover:text-text-primary pb-1 transition-colors font-label-md text-label-md" href="#">Scope &amp; Guardrails</a>
+</nav>
+<!-- Trailing Actions Cluster -->
+<div class="flex items-center gap-space-sm">
+<button class="text-text-secondary hover:bg-surface-elevated/60 p-2 rounded-lg transition-colors duration-150 relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-accent-electric"></span>
+</button>
+<button class="text-text-secondary hover:bg-surface-elevated/60 p-2 rounded-lg transition-colors duration-150">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<button class="text-text-secondary hover:bg-surface-elevated/60 p-2 rounded-lg transition-colors duration-150">
+<span class="material-symbols-outlined" data-icon="tune">tune</span>
+</button>
+<div class="h-6 w-px bg-border-subtle mx-1"></div>
+<button class="px-space-md py-2 bg-surface-overlay text-text-primary border border-border-prominent hover:bg-surface-elevated rounded-lg font-label-md text-label-md transition-colors duration-150">
+          Cadence Settings
+        </button>
+<button class="px-space-md py-2 bg-primary-container text-surface-canvas font-bold rounded-lg font-label-md text-label-md hover:brightness-110 shadow-[0_0_16px_rgba(2,245,118,0.25)] transition-all duration-150 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm font-bold" data-icon="send">send</span>
+          Send Chase Batch
+        </button>
+<div class="ml-2 pl-2 border-l border-border-subtle flex items-center gap-2">
+<img class="w-8 h-8 rounded-full border border-border-prominent object-cover" data-alt="Close up executive portrait of relationship manager wearing charcoal tailored suit, crisp white shirt with dark obsidian background, sharp edge lighting with slight violet cyan reflection, photorealistic institutional corporate photography 8k resolution" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHQa4aVpHpjQCbdyvFpfQRiknvGEnaSWGMC2yqkuce9xy7OdrwF8H7mUBCWMh0Tdcs_EQEKpiWLwI4axbyYC6sF39soYRC_VcdKrGrOZ4ym8bVrAx83e2llUvFPQ7vXO5hfI6Y4FRSx02cEBHOJlTauTysxEbNPtyczP7DWiWy31sJcK0sbfNBftipuoMUBZf-8zz8auCSdKllK1uEIiq2ZKbhIFwVHvpZyldXc1FG"/>
+</div>
+</div>
+</div>
+</header>
+<!-- ================= MAIN LAYOUT WITH SIDEBAR ================= -->
+<div class="flex min-h-[calc(100vh-64px)] max-w-[1440px] mx-auto w-full">
+<!-- ================= SIDEBAR ================= -->
+<aside class="fixed left-0 top-16 bottom-0 w-64 p-space-md flex flex-col justify-between z-40 bg-surface-elevated border-r border-border-subtle">
+<!-- Top Group -->
+<div class="space-y-space-md">
+<!-- Sidebar Header / Badge -->
+<div class="p-space-sm rounded-lg bg-surface-canvas/60 border border-border-subtle flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-accent-violet/20 border border-accent-violet/40 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="shield">shield</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-text-primary leading-tight">RM Operational Suite</h2>
+<p class="font-label-caps text-label-caps text-text-muted">Institutional Client Group</p>
+</div>
+</div>
+<!-- Primary Nav Items (6 Tabs) -->
+<nav class="space-y-1">
+<!-- 1: Missing Matrix -->
+<a class="text-text-secondary hover:text-text-primary hover:bg-surface-overlay/50 px-space-md py-space-sm rounded-lg transition-colors flex items-center gap-space-sm font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="table_chart">table_chart</span>
+            Missing Matrix
+          </a>
+<!-- 2: AI Email Drafter -->
+<a class="text-text-secondary hover:text-text-primary hover:bg-surface-overlay/50 px-space-md py-space-sm rounded-lg transition-colors flex items-center gap-space-sm font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="auto_awesome">auto_awesome</span>
+            AI Email Drafter
+          </a>
+<!-- 3: Review & Execute -->
+<a class="text-text-secondary hover:text-text-primary hover:bg-surface-overlay/50 px-space-md py-space-sm rounded-lg transition-colors flex items-center gap-space-sm font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="mark_email_read">mark_email_read</span>
+            Review &amp; Execute
+          </a>
+<!-- 4: Cadence Rules (ACTIVE TAB) -->
+<a class="bg-surface-overlay text-accent-electric border-r-2 border-accent-electric font-semibold px-space-md py-space-sm rounded-lg flex items-center justify-between font-label-md text-label-md" href="#">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-lg" data-icon="schedule_send" data-weight="fill" style="font-variation-settings: 'FILL' 1;">schedule_send</span>
+              Cadence Rules
+            </div>
+<span class="w-1.5 h-1.5 rounded-full bg-accent-electric shadow-[0_0_8px_#02F576]"></span>
+</a>
+<!-- 5: Impact Telemetry -->
+<a class="text-text-secondary hover:text-text-primary hover:bg-surface-overlay/50 px-space-md py-space-sm rounded-lg transition-colors flex items-center gap-space-sm font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="monitoring">monitoring</span>
+            Impact Telemetry
+          </a>
+<!-- 6: Policy Guardrails -->
+<a class="text-text-secondary hover:text-text-primary hover:bg-surface-overlay/50 px-space-md py-space-sm rounded-lg transition-colors flex items-center gap-space-sm font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="security">security</span>
+            Policy Guardrails
+          </a>
+</nav>
+<!-- Sidebar Mid Action -->
+<div class="pt-2">
+<button class="w-full py-2 bg-surface-overlay border border-border-subtle hover:border-accent-electric/40 text-text-primary rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-sm text-accent-electric" data-icon="sync">sync</span>
+            Trigger Sync
+          </button>
+</div>
+</div>
+<!-- Footer Tabs (Audit Trail, API Gateway) -->
+<div class="space-y-1 pt-space-md border-t border-border-subtle">
+<a class="text-text-secondary hover:text-text-primary hover:bg-surface-overlay/50 px-space-md py-space-sm rounded-lg transition-colors flex items-center gap-space-sm font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="history">history</span>
+          Audit Trail
+        </a>
+<a class="text-text-secondary hover:text-text-primary hover:bg-surface-overlay/50 px-space-md py-space-sm rounded-lg transition-colors flex items-center gap-space-sm font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="hub">hub</span>
+          API Gateway
+        </a>
+<div class="mt-2 px-space-md py-1 text-[10px] text-text-muted font-label-caps flex items-center justify-between">
+<span>CO-PILOT v4.2.8</span>
+<span class="flex items-center gap-1 text-accent-electric"><span class="w-1.5 h-1.5 rounded-full bg-accent-electric"></span>ONLINE</span>
+</div>
+</div>
+</aside>
+<!-- ================= MAIN WORKSPACE CANVAS ================= -->
+<main class="ml-64 flex-1 p-space-lg w-[calc(100%-16rem)] max-w-[1184px]">
+<!-- SUB-HEADER / CASE METADATA MODULE -->
+<div class="bg-surface-elevated border border-border-subtle rounded-xl p-space-lg mb-space-lg relative overflow-hidden">
+<!-- Ambient radial glow behind card -->
+<div class="absolute -right-20 -top-20 w-72 h-72 bg-accent-electric/5 rounded-full blur-3xl pointer-events-none ambient-glow"></div>
+<div class="absolute -left-20 -bottom-20 w-72 h-72 bg-accent-violet/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col xl:flex-row xl:items-center xl:justify-between gap-space-md">
+<!-- Left: Case Identification -->
+<div>
+<div class="flex items-center gap-3 mb-1">
+<span class="px-2.5 py-0.5 rounded-lg bg-surface-overlay border border-border-prominent font-label-caps text-label-caps text-accent-electric flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-electric animate-ping"></span>
+                CHASE ACTIVE
+              </span>
+<span class="px-2 py-0.5 rounded-lg bg-accent-violet/15 text-secondary font-label-caps text-label-caps">
+                TRUST PORTFOLIO T-7714
+              </span>
+<span class="text-text-muted font-label-caps text-label-caps tracking-wider">
+                ID: #NG-WF-0982-OKA
+              </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg font-bold text-text-primary tracking-tight flex items-center gap-3">
+              Okafor Family Trust
+              <span class="text-text-secondary font-headline-sm text-headline-sm font-normal">| Primary Trustee: Chidi Okafor</span>
+</h1>
+<div class="flex flex-wrap items-center gap-x-6 gap-y-2 mt-2 text-text-secondary font-body-md text-body-md">
+<span class="flex items-center gap-1.5 text-text-primary">
+<span class="material-symbols-outlined text-base text-accent-electric" data-icon="outgoing_mail">outgoing_mail</span>
+                Chase Sent: <span class="font-semibold">Mon 9 Nov</span>
+</span>
+<span class="text-border-prominent">•</span>
+<span class="flex items-center gap-1.5 text-accent-electric font-semibold">
+<span class="material-symbols-outlined text-base" data-icon="timer">timer</span>
+                T+3 Days Elapsed
+              </span>
+<span class="text-border-prominent">•</span>
+<span class="flex items-center gap-1.5 text-text-muted">
+<span class="material-symbols-outlined text-base" data-icon="security">security</span>
+                Verified RM Assigned: Sarah Jenkins (VP Private Wealth)
+              </span>
+</div>
+</div>
+<!-- Right: Section Cadence Indicator Badge -->
+<div class="xl:text-right flex flex-col xl:items-end justify-center">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-overlay border border-border-prominent shadow-sm">
+<span class="material-symbols-outlined text-accent-electric text-lg" data-icon="bolt">bolt</span>
+<span class="font-label-caps text-label-caps text-text-primary">Section 4 - Cadence Engine - Awaiting Client</span>
+</div>
+<div class="mt-2 text-accent-electric font-label-md text-label-md flex items-center gap-1 xl:justify-end">
+<span class="material-symbols-outlined text-base" data-icon="notifications_active">notifications_active</span>
+              (Day 3 Triggered - Action Required)
+            </div>
+</div>
+</div>
+</div>
+<!-- ================= SECTION TITLE & TELEMETRY BAR ================= -->
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-electric" data-icon="account_tree">account_tree</span>
+            Follow-Up State Machine Progression
+          </h2>
+<p class="font-body-md text-body-md text-text-secondary">Deterministic multi-tier escalation pathway aligned with FCA regulatory communication guardrails.</p>
+</div>
+<div class="flex items-center gap-2 font-label-caps text-label-caps text-text-muted bg-surface-elevated px-3 py-1.5 rounded-lg border border-border-subtle">
+<span class="w-2 h-2 rounded-full bg-accent-electric"></span>
+          ACTIVE TIMELINE TRACKER
+        </div>
+</div>
+<!-- ================= WIDE CADENCE STATE MACHINE INTERACTIVE FLOW ================= -->
+<div class="grid grid-cols-1 xl:grid-cols-5 gap-space-sm mb-space-lg relative">
+<!-- STEP 1: Complete (Day 0) -->
+<div class="bg-surface-elevated border border-border-subtle rounded-xl p-space-md flex flex-col justify-between relative group hover:border-accent-electric/40 transition-colors">
+<div class="absolute top-0 left-0 right-0 h-1 bg-accent-electric rounded-t-xl"></div>
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-caps text-label-caps text-accent-electric bg-accent-electric/10 px-2 py-0.5 rounded">DAY 0 • EXEC</span>
+<div class="w-6 h-6 rounded-full bg-accent-electric/20 border border-accent-electric flex items-center justify-center text-accent-electric">
+<span class="material-symbols-outlined text-sm font-bold" data-icon="check">check</span>
+</div>
+</div>
+<h3 class="font-label-lg text-label-lg font-bold text-text-primary mb-1">Initial Chase Dispatch</h3>
+<p class="font-body-md text-body-md text-text-secondary text-xs mb-3">
+              Chase sent by RM via encrypted portal mail. Document inventory manifest attached.
+            </p>
+</div>
+<div class="pt-3 border-t border-border-subtle flex items-center justify-between text-[11px] text-text-muted">
+<span class="flex items-center gap-1 font-label-caps">
+<span class="material-symbols-outlined text-xs text-accent-electric" data-icon="mark_email_read">mark_email_read</span>
+              Mon 9 Nov, 09:30
+            </span>
+<span class="text-accent-electric font-semibold font-label-caps">PASSED</span>
+</div>
+</div>
+<!-- STEP 2: Event (Partial Reply Received) -->
+<div class="bg-surface-elevated border border-border-subtle rounded-xl p-space-md flex flex-col justify-between relative group hover:border-accent-electric/40 transition-colors">
+<div class="absolute top-0 left-0 right-0 h-1 bg-accent-electric rounded-t-xl"></div>
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-caps text-label-caps text-secondary bg-accent-violet/20 px-2 py-0.5 rounded">EVENT • T+1.5</span>
+<div class="w-6 h-6 rounded-full bg-accent-violet/30 border border-accent-violet flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-sm font-bold" data-icon="inbox">inbox</span>
+</div>
+</div>
+<h3 class="font-label-lg text-label-lg font-bold text-text-primary mb-1">Partial Reply Received</h3>
+<p class="font-body-md text-body-md text-text-secondary text-xs mb-2">
+              Client submitted Trust deed pages 1-11 &amp; passport. Gap check auto-executed:
+            </p>
+<div class="bg-surface-canvas/60 rounded-lg p-2 border border-border-subtle text-xs space-y-1">
+<div class="flex items-center justify-between text-text-secondary">
+<span>Trust Deed Addendum:</span>
+<span class="text-accent-electric font-mono text-[10px]">VERIFIED</span>
+</div>
+<div class="flex items-center justify-between text-text-secondary">
+<span>Remaining Shortfall:</span>
+<span class="text-error font-mono font-bold text-[10px]">3 ITEMS</span>
+</div>
+</div>
+</div>
+<div class="pt-3 mt-2 border-t border-border-subtle flex items-center justify-between text-[11px] text-text-muted">
+<span class="flex items-center gap-1 font-label-caps">
+<span class="material-symbols-outlined text-xs text-accent-electric" data-icon="rule">rule</span>
+              Sync: Tue 10 Nov
+            </span>
+<span class="text-accent-electric font-semibold font-label-caps">GAP LOGGED</span>
+</div>
+</div>
+<!-- STEP 3: Current Stage Alert (Day 3 - ACTIVE) -->
+<div class="bg-surface-overlay border-2 border-accent-electric rounded-xl p-space-md flex flex-col justify-between relative shadow-[0_12px_32px_-8px_rgba(2,245,118,0.18)]">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full bg-accent-electric text-surface-canvas font-label-caps text-label-caps font-bold shadow-md flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-canvas animate-pulse"></span>
+            ACTIVE STAGE
+          </div>
+<div>
+<div class="flex items-center justify-between mb-3 mt-1">
+<span class="font-label-caps text-label-caps text-accent-electric bg-accent-electric/15 px-2 py-0.5 rounded">DAY 3 • DUE TODAY</span>
+<div class="w-6 h-6 rounded-full bg-accent-electric text-surface-canvas flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="priority_high">priority_high</span>
+</div>
+</div>
+<h3 class="font-label-lg text-label-lg font-bold text-text-primary mb-1">Pre-Drafted Gentle Reminder</h3>
+<p class="font-body-md text-body-md text-text-secondary text-xs mb-2">
+              Ready for RM review. Generated with context from partial documents.
+            </p>
+<!-- Card Preview Inside Step -->
+<div class="bg-surface-elevated rounded-lg p-2.5 border border-border-prominent text-xs mb-3 space-y-1">
+<div class="flex items-center justify-between font-label-caps text-[10px] text-accent-electric">
+<span>DRAFT PREVIEW</span>
+<span class="text-text-muted">AUTO-GEN</span>
+</div>
+<p class="font-semibold text-text-primary text-[11px] truncate">
+                Re: Okafor Family Trust, 3 items still outstanding (by Mon 16 Nov)
+              </p>
+<p class="text-text-secondary text-[10px] line-clamp-2 italic">
+                "Dear Chidi, thank you for sending over pages 1-11 of the Trust deed and your passport. To finalise..."
+              </p>
+</div>
+</div>
+<div>
+<button class="w-full py-2 bg-accent-electric hover:brightness-110 text-surface-canvas font-bold rounded-lg font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-[0_0_12px_rgba(2,245,118,0.3)] transition-all">
+<span class="material-symbols-outlined text-sm font-bold" data-icon="edit_note">edit_note</span>
+              Review Day-3 Reminder Draft
+            </button>
+</div>
+</div>
+<!-- STEP 4: Scheduled Trigger (Day 6) -->
+<div class="bg-surface-elevated border border-border-subtle rounded-xl p-space-md flex flex-col justify-between opacity-85 hover:opacity-100 transition-opacity">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-caps text-label-caps text-text-muted bg-surface-canvas px-2 py-0.5 rounded">DAY 6 • SCHEDULED</span>
+<div class="w-6 h-6 rounded-full bg-surface-canvas border border-border-subtle flex items-center justify-center text-text-muted">
+<span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
+</div>
+</div>
+<h3 class="font-label-lg text-label-lg font-bold text-text-primary mb-1">RM Phone Call Action</h3>
+<p class="font-body-md text-body-md text-text-secondary text-xs mb-3">
+              Suggest phone call with RM talking points card. Generates high-touch verbal script.
+            </p>
+<div class="p-2 rounded bg-surface-canvas/50 border border-border-subtle text-[11px] text-text-secondary flex items-start gap-2">
+<span class="material-symbols-outlined text-sm text-text-muted" data-icon="contact_phone">contact_phone</span>
+<span>Queued for Thu 12 Nov if no response by 17:00.</span>
+</div>
+</div>
+<div class="pt-3 border-t border-border-subtle flex items-center justify-between text-[11px] text-text-muted">
+<span class="font-label-caps">Next Milestone</span>
+<span class="text-text-secondary font-label-caps">IN 72 HOURS</span>
+</div>
+</div>
+<!-- STEP 5: Internal Escalation (Day 9) -->
+<div class="bg-surface-elevated border border-border-subtle rounded-xl p-space-md flex flex-col justify-between opacity-75 hover:opacity-100 transition-opacity">
+<div>
+<div class="flex items-center justify-between mb-3">
+<span class="font-label-caps text-label-caps text-error bg-error-container/20 px-2 py-0.5 rounded">DAY 9 • ESCALATION</span>
+<div class="w-6 h-6 rounded-full bg-surface-canvas border border-border-subtle flex items-center justify-center text-text-muted">
+<span class="material-symbols-outlined text-sm" data-icon="lock">lock</span>
+</div>
+</div>
+<h3 class="font-label-lg text-label-lg font-bold text-text-primary mb-1">Stalled Case Escalation</h3>
+<p class="font-body-md text-body-md text-text-secondary text-xs mb-3">
+              Stalled escalation flag routed to RM's manager &amp; Operations Group.
+            </p>
+<div class="p-2 rounded bg-error-container/10 border border-error/20 text-[11px] text-error flex items-start gap-1.5">
+<span class="material-symbols-outlined text-sm flex-shrink-0" data-icon="gavel">gavel</span>
+<span class="font-semibold leading-tight">Strictly noted: No client auto-contact permitted at this stage.</span>
+</div>
+</div>
+<div class="pt-3 border-t border-border-subtle flex items-center justify-between text-[11px] text-text-muted">
+<span class="font-label-caps">Ops Desk</span>
+<span class="text-text-muted font-label-caps">LOCKED</span>
+</div>
+</div>
+</div>
+<!-- ================= DETAILED INSPECTION BENTO: OUTSTANDING DOCS & ACTIONS ================= -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-lg">
+<!-- Outstanding Items List (5 Cols) -->
+<div class="lg:col-span-5 bg-surface-elevated border border-border-subtle rounded-xl p-space-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm pb-space-sm border-b border-border-subtle">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-electric text-lg" data-icon="checklist">checklist</span>
+<h3 class="font-label-lg text-label-lg font-bold text-text-primary">Outstanding Requirement Payload</h3>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-canvas text-accent-electric font-mono font-bold text-xs">3 PENDING</span>
+</div>
+<div class="space-y-2 mb-3">
+<!-- Item 1 -->
+<div class="p-2.5 rounded-lg bg-surface-canvas/80 border border-border-subtle flex items-start justify-between">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-sm text-error mt-0.5" data-icon="error">error</span>
+<div>
+<p class="text-xs font-semibold text-text-primary">Trust Deed: Schedule B &amp; Signatures (Pgs 12-14)</p>
+<p class="text-[11px] text-text-secondary">Mandatory for KYC Trustee confirmation</p>
+</div>
+</div>
+<span class="text-[10px] font-label-caps text-error bg-error-container/20 px-1.5 py-0.5 rounded">CRITICAL</span>
+</div>
+<!-- Item 2 -->
+<div class="p-2.5 rounded-lg bg-surface-canvas/80 border border-border-subtle flex items-start justify-between">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-sm text-error mt-0.5" data-icon="error">error</span>
+<div>
+<p class="text-xs font-semibold text-text-primary">Proof of Beneficial Ownership (Over 25%)</p>
+<p class="text-[11px] text-text-secondary">Certified bank statement or certified register</p>
+</div>
+</div>
+<span class="text-[10px] font-label-caps text-error bg-error-container/20 px-1.5 py-0.5 rounded">CRITICAL</span>
+</div>
+<!-- Item 3 -->
+<div class="p-2.5 rounded-lg bg-surface-canvas/80 border border-border-subtle flex items-start justify-between">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-sm text-tertiary-fixed-dim mt-0.5" data-icon="pending">pending</span>
+<div>
+<p class="text-xs font-semibold text-text-primary">Utility Bill Proof of Address (&lt;90 days)</p>
+<p class="text-[11px] text-text-secondary">Chidi Okafor residential primary residency</p>
+</div>
+</div>
+<span class="text-[10px] font-label-caps text-tertiary-fixed-dim bg-tertiary-container/10 px-1.5 py-0.5 rounded">STANDARD</span>
+</div>
+</div>
+</div>
+<div class="p-2 rounded bg-surface-canvas border border-border-subtle flex items-center justify-between text-xs text-text-muted">
+<span class="flex items-center gap-1 font-label-caps">
+<span class="material-symbols-outlined text-xs text-accent-electric" data-icon="verified_user">verified_user</span>
+              Auto-verified on receipt by OCR
+            </span>
+<span class="text-accent-electric font-semibold font-mono text-[11px]">GAP CHECK PASS</span>
+</div>
+</div>
+<!-- Interactive Talking Points & Call Execution Drawer (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-elevated border border-border-subtle rounded-xl p-space-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm pb-space-sm border-b border-border-subtle">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-violet text-lg" data-icon="support_agent">support_agent</span>
+<h3 class="font-label-lg text-label-lg font-bold text-text-primary">High-Touch RM Verbal Talking Points</h3>
+</div>
+<span class="px-2 py-0.5 rounded bg-accent-violet/20 text-secondary font-label-caps text-label-caps">PRE-CALCULATED SCRIPT</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-sm mb-3">
+<div class="p-3 rounded-lg bg-surface-canvas/80 border border-border-subtle">
+<div class="flex items-center gap-2 text-accent-electric font-label-caps text-[11px] mb-1">
+<span class="material-symbols-outlined text-xs" data-icon="thumb_up">thumb_up</span>
+                  Acknowledge &amp; Validate
+                </div>
+<p class="text-xs text-text-secondary leading-relaxed">
+                  "Thank Chidi directly for promptly sending through the first batch. Confirm receipt of the 11 pages and passport to preserve client rapport."
+                </p>
+</div>
+<div class="p-3 rounded-lg bg-surface-canvas/80 border border-border-subtle">
+<div class="flex items-center gap-2 text-secondary font-label-caps text-[11px] mb-1">
+<span class="material-symbols-outlined text-xs" data-icon="lock_clock">lock_clock</span>
+                  Regulatory Driver Context
+                </div>
+<p class="text-xs text-text-secondary leading-relaxed">
+                  "Clarify that Schedule B is required strictly by the Compliance Committee before the Friday funding window closes to unlock the facility."
+                </p>
+</div>
+</div>
+<!-- Interactive Direct Phone Launcher -->
+<div class="bg-surface-canvas rounded-lg p-3 border border-border-prominent flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-accent-electric/10 border border-accent-electric/30 flex items-center justify-center text-accent-electric">
+<span class="material-symbols-outlined text-xl" data-icon="call">call</span>
+</div>
+<div>
+<p class="text-xs font-semibold text-text-primary">Chidi Okafor • Primary Trustee Direct Line</p>
+<p class="text-xs font-mono text-accent-electric">+44 (0) 20 7946 0884  <span class="text-text-muted">• London (GMT)</span></p>
+</div>
+</div>
+<button class="px-3 py-1.5 bg-surface-overlay hover:bg-surface-bright text-text-primary border border-border-prominent rounded-lg font-label-md text-label-md flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-sm text-accent-electric" data-icon="phone_forwarded">phone_forwarded</span>
+                Call with Script
+              </button>
+</div>
+</div>
+<div class="mt-3 pt-3 border-t border-border-subtle flex items-center justify-between text-xs text-text-muted">
+<span class="font-body-md text-xs">Logged automatically to Salesforce &amp; Core Banking CRM under Ticket #CR-8891</span>
+<span class="text-accent-electric font-semibold font-label-caps">TELEPHONY READY</span>
+</div>
+</div>
+</div>
+<!-- ================= BOTTOM CONTROLS & RULES GRID ================= -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Automation Protocol Policy Box (7 Cols) -->
+<div class="lg:col-span-7 bg-surface-elevated border border-border-subtle rounded-xl p-space-md">
+<div class="flex items-center gap-2 mb-space-sm pb-space-sm border-b border-border-subtle">
+<span class="material-symbols-outlined text-accent-electric text-lg" data-icon="shield_lock">shield_lock</span>
+<h3 class="font-label-lg text-label-lg font-bold text-text-primary">Automation Protocol &amp; Guardrail Rules</h3>
+</div>
+<div class="space-y-3 font-body-md text-body-md text-text-secondary text-xs">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-accent-electric text-base mt-0.5 flex-shrink-0" data-icon="update">update</span>
+<div>
+<strong class="text-text-primary">Clock Reset Policy:</strong>
+                Partial reply resets the 3-day cadence clock for outstanding delta items only. Full submission halts the cadence pipeline instantly.
+              </div>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-accent-electric text-base mt-0.5 flex-shrink-0" data-icon="speed">speed</span>
+<div>
+<strong class="text-text-primary">Anti-Spam Throttling:</strong>
+                Maximum 1 outbound automated client task per case per day. Prevents duplicate multi-channel alerts from triggering simultaneously.
+              </div>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-secondary text-base mt-0.5 flex-shrink-0" data-icon="person_check">person_check</span>
+<div>
+<strong class="text-text-primary">RM Retains Manual Pause Authority:</strong>
+                RM holds veto override over all automatic actions. Pauses require reason code logging for internal institutional audit compliance.
+              </div>
+</div>
+</div>
+<!-- Bottom micro-actions inside policy box -->
+<div class="mt-4 pt-3 border-t border-border-subtle flex flex-wrap items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 bg-surface-canvas hover:bg-surface-overlay text-text-secondary hover:text-text-primary border border-border-subtle rounded-lg font-label-md text-label-md flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="history_toggle_subpath">image_search</span>
+                Audit Log (14 Events)
+              </button>
+<button class="px-3 py-1.5 bg-surface-canvas hover:bg-surface-overlay text-text-secondary hover:text-text-primary border border-border-subtle rounded-lg font-label-md text-label-md flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="settings">settings</span>
+                Cadence Settings
+              </button>
+</div>
+<span class="text-text-muted font-label-caps text-[10px]">POLICY COMPLIANT: FCA CONDUCT RULES v2024</span>
+</div>
+</div>
+<!-- Case Action Controls & Snooze Card (5 Cols) -->
+<div class="lg:col-span-5 bg-surface-elevated border border-border-subtle rounded-xl p-space-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-sm pb-space-sm border-b border-border-subtle">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-electric text-lg" data-icon="pause_circle">pause_circle</span>
+<h3 class="font-label-lg text-label-lg font-bold text-text-primary">Case Action Controls</h3>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-canvas text-text-muted font-label-caps text-label-caps">RM OVERRIDE</span>
+</div>
+<p class="font-body-md text-body-md text-text-secondary text-xs mb-3">
+              Temporarily suspend follow-up triggers if client is on holiday, bereavement, or an agreed extended submission date has been authorized.
+            </p>
+<!-- Snooze Control Inputs -->
+<div class="space-y-2 mb-3">
+<div class="grid grid-cols-2 gap-2">
+<button class="py-2 px-3 bg-surface-canvas border border-border-subtle hover:border-accent-electric text-text-primary rounded-lg font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-sm text-accent-electric" data-icon="snooze">snooze</span>
+                  Pause 7 Days
+                </button>
+<button class="py-2 px-3 bg-surface-canvas border border-border-subtle hover:border-accent-electric text-text-primary rounded-lg font-label-md text-label-md flex items-center justify-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-sm text-accent-electric" data-icon="event">event</span>
+                  Set Custom Date
+                </button>
+</div>
+<!-- Talking Points Action -->
+<button class="w-full py-2 px-3 bg-surface-overlay border border-border-prominent hover:border-accent-violet text-text-primary rounded-lg font-label-md text-label-md flex items-center justify-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="description">description</span>
+                Export Talking Points Card (.PDF)
+              </button>
+</div>
+</div>
+<!-- RM Commitment Notice -->
+<div class="pt-3 border-t border-border-subtle flex items-center justify-between">
+<span class="text-[11px] text-text-muted font-label-caps">CURRENT OPERATOR</span>
+<span class="text-xs font-semibold text-accent-electric flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-electric"></span>
+              Sarah Jenkins (Session Active)
+            </span>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

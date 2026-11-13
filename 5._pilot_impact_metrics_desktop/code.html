@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>5. Pilot Impact &amp; Metrics — Northgate Bank Document Chaser Copilot</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Container Queries -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#32353c",
+            "tertiary-container": "#ffcd80",
+            "error-container": "#93000a",
+            "primary-fixed": "#65ff90",
+            "surface-container-high": "#272a31",
+            "tertiary-fixed-dim": "#efbf73",
+            "surface-tint": "#00e46d",
+            "primary-fixed-dim": "#00e46d",
+            "on-primary-fixed": "#00210a",
+            "text-primary": "#FFFFFF",
+            "border-subtle": "rgba(255, 255, 255, 0.08)",
+            "secondary-fixed": "#e6deff",
+            "tertiary-fixed": "#ffddae",
+            "background": "#10131a",
+            "text-muted": "#64748B",
+            "surface-container": "#1d2026",
+            "inverse-on-surface": "#2e3037",
+            "surface-variant": "#32353c",
+            "on-secondary": "#30009b",
+            "outline-variant": "#3b4b3c",
+            "surface": "#10131a",
+            "surface-dim": "#10131a",
+            "secondary-container": "#4f00f1",
+            "on-surface-variant": "#bacbb8",
+            "on-tertiary": "#432c00",
+            "inverse-primary": "#006d31",
+            "error": "#ffb4ab",
+            "border-prominent": "rgba(255, 255, 255, 0.16)",
+            "surface-container-lowest": "#0b0e14",
+            "on-primary-container": "#006b2f",
+            "on-surface": "#e1e2eb",
+            "on-background": "#e1e2eb",
+            "secondary-fixed-dim": "#c9beff",
+            "surface-container-low": "#191c22",
+            "on-error": "#690005",
+            "on-primary-fixed-variant": "#005323",
+            "surface-canvas": "#0B0E14",
+            "surface-bright": "#363940",
+            "outline": "#849584",
+            "accent-electric": "#02F576",
+            "on-tertiary-container": "#795513",
+            "surface-elevated": "#141824",
+            "inverse-surface": "#e1e2eb",
+            "text-secondary": "#9CA3AF",
+            "accent-violet": "#5F2CFF",
+            "on-secondary-container": "#c5baff",
+            "on-secondary-fixed-variant": "#4600d8",
+            "on-tertiary-fixed-variant": "#604100",
+            "tertiary": "#ffefdc",
+            "on-secondary-fixed": "#1b0062",
+            "surface-overlay": "#1E2435",
+            "on-primary": "#003916",
+            "primary-container": "#02f576",
+            "primary": "#c9ffcd",
+            "secondary": "#c9beff",
+            "on-tertiary-fixed": "#281800",
+            "on-error-container": "#ffdad6"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "margin": "2rem",
+            "gutter-mobile": "1rem",
+            "margin-mobile": "1rem",
+            "gutter": "1.5rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "label-md": ["Montserrat"],
+            "headline-sm": ["Montserrat"],
+            "label-caps": ["Montserrat"],
+            "label-lg": ["Montserrat"],
+            "body-md": ["Montserrat"],
+            "body-lg": ["Montserrat"],
+            "display-hero": ["Montserrat"],
+            "body-xl": ["Montserrat"],
+            "headline-lg": ["Montserrat"],
+            "display-hero-mobile": ["Montserrat"],
+            "headline-md": ["Montserrat"],
+            "headline-xl": ["Montserrat"],
+            "headline-xl-mobile": ["Montserrat"]
+          },
+          "fontSize": {
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "display-hero": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "body-xl": ["18px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "800" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Subtle scanline and grid background overlay for telemetry precision */
+    .bg-grid-mesh {
+      background-size: 32px 32px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="bg-surface-canvas text-text-primary min-h-screen flex flex-col font-body-md antialiased selection:bg-accent-electric selection:text-surface-canvas">
+<!-- TOP NAVIGATION BAR (Enterprise Desktop) -->
+<header class="docked full-width top-0 sticky z-50 bg-surface-canvas/80 backdrop-blur-md dark:bg-surface-canvas/80 border-b border-border-subtle dark:border-border-subtle shadow-none">
+<div class="w-full px-space-xl flex items-center justify-between h-16 max-w-[1440px] mx-auto">
+<!-- Brand & Product Title -->
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-7 h-7 rounded-lg bg-accent-violet flex items-center justify-center shadow-[0_0_12px_rgba(95,44,255,0.4)]">
+<span class="material-symbols-outlined text-text-primary text-[18px]">verified_user</span>
+</div>
+<span class="font-headline-md text-headline-md font-bold text-text-primary dark:text-text-primary tracking-tight">
+            Northgate Bank Document Chaser Copilot
+          </span>
+</div>
+<!-- Live Sync Telemetry Pill -->
+<div class="hidden xl:flex items-center gap-2 px-2.5 py-1 rounded-full bg-surface-elevated border border-border-subtle">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-electric opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-accent-electric"></span>
+</span>
+<span class="font-label-caps text-label-caps text-accent-electric tracking-wider">LIVE TELEMETRY SYNC</span>
+<span class="font-label-caps text-label-caps text-text-muted">| 1440px DESKTOP</span>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="hidden lg:flex items-center space-x-6">
+<a class="font-label-md text-label-md text-text-secondary hover:text-text-primary pb-1 transition-colors" href="#matrix">Missing Documents Matrix</a>
+<a class="font-label-md text-label-md text-text-secondary hover:text-text-primary pb-1 transition-colors" href="#drafter">AI Draft Chase Email</a>
+<a class="font-label-md text-label-md text-text-secondary hover:text-text-primary pb-1 transition-colors" href="#review">RM Review &amp; Send</a>
+<a class="font-label-md text-label-md text-text-secondary hover:text-text-primary pb-1 transition-colors" href="#cadence">Follow-Up Cadence</a>
+<!-- Active Nav: Pilot Metrics -->
+<a class="font-label-md text-label-md border-b-2 border-accent-electric text-accent-electric font-semibold pb-1" href="#metrics">Pilot Metrics</a>
+<a class="font-label-md text-label-md text-text-secondary hover:text-text-primary pb-1 transition-colors" href="#guardrails">Scope &amp; Guardrails</a>
+</nav>
+<!-- Trailing Action Cluster & Profile -->
+<div class="flex items-center gap-space-md">
+<button class="font-label-md text-label-md px-3 py-1.5 rounded-lg border border-border-prominent text-text-primary hover:bg-surface-elevated/60 transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>Cadence Settings</span>
+</button>
+<button class="font-label-md text-label-md px-4 py-1.5 rounded-lg bg-accent-electric text-surface-canvas font-bold hover:brightness-110 shadow-[0_0_16px_rgba(2,245,118,0.35)] transition-all flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px]">send</span>
+<span>Send Chase Batch</span>
+</button>
+<div class="h-6 w-px bg-border-subtle mx-1"></div>
+<div class="flex items-center gap-1 text-text-secondary">
+<button class="p-1.5 rounded-lg hover:bg-surface-elevated/60 text-text-secondary hover:text-text-primary transition-colors" title="Notifications">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button class="p-1.5 rounded-lg hover:bg-surface-elevated/60 text-text-secondary hover:text-text-primary transition-colors" title="Help &amp; Documentation">
+<span class="material-symbols-outlined text-[20px]">help</span>
+</button>
+</div>
+<!-- RM Profile Avatar -->
+<div class="flex items-center gap-2 pl-2">
+<div class="w-8 h-8 rounded-full border border-accent-electric/40 bg-surface-overlay flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close up photographic studio portrait of a senior institutional banking relationship manager looking confident and composed against a dark ambient technological background with subtle emerald and violet rim light reflecting deep enterprise focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb6gczjzWbN9Aj3luZYDzIntS0HR7UQhL8tfvi4WMv6RnR4W2llEzuQK3ax1_f04FOagEiUW2Nm4OYvFlFASyRDecm82Lm46MRPc5D8AOPCd1dMFE78LQZiGO8uhWs18If1f1ISDQ2KSvcgHHFtCFTQvDLwVHLQEs0PqrZXcnLx5bbZX8C9yIHwsOOmBtCr2-m74VvrAKCh50S26wPCs4yivzhSwnpKlRhRjLl2g5G"/>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- BODY SHELL: Left SideNavBar + Main Content Canvas -->
+<div class="flex flex-1 w-full max-w-[1440px] mx-auto relative bg-grid-mesh">
+<!-- LEFT SIDEBAR NAVIGATION -->
+<aside class="w-64 flex-shrink-0 bg-surface-elevated dark:bg-surface-elevated border-r border-border-subtle dark:border-border-subtle p-space-md flex flex-col justify-between z-40 min-h-[calc(100vh-4rem)]">
+<!-- Top Section -->
+<div class="space-y-6">
+<!-- Sidebar Header / Badge -->
+<div class="flex items-center gap-3 px-2 py-1">
+<div class="w-9 h-9 rounded-lg bg-surface-overlay border border-border-subtle flex items-center justify-center text-accent-electric">
+<span class="material-symbols-outlined text-[22px]">corporate_fare</span>
+</div>
+<div class="overflow-hidden">
+<div class="font-headline-sm text-headline-sm font-bold text-text-primary truncate">RM Operational Suite</div>
+<div class="font-label-caps text-label-caps text-text-muted truncate">Institutional Client Group</div>
+</div>
+</div>
+<!-- Trigger Sync Action CTA -->
+<button class="w-full py-2 px-3 rounded-lg bg-surface-overlay hover:bg-surface-bright border border-border-subtle flex items-center justify-between text-text-primary transition-all group">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-electric text-[18px] group-hover:rotate-180 transition-transform duration-500">sync</span>
+<span class="font-label-md text-label-md">Trigger Sync</span>
+</div>
+<span class="font-label-caps text-label-caps bg-surface-canvas text-accent-electric px-1.5 py-0.5 rounded border border-accent-electric/20">LIVE</span>
+</button>
+<!-- Navigation Tabs (Exact matches from JSON) -->
+<div class="space-y-1">
+<div class="font-label-caps text-label-caps text-text-muted px-space-md py-1 uppercase tracking-wider">
+            Operational Workflows
+          </div>
+<!-- Tab 1: Missing Matrix -->
+<a class="flex items-center gap-3 text-text-secondary hover:text-text-primary hover:bg-surface-overlay/50 px-space-md py-space-sm rounded-lg transition-colors" href="#matrix">
+<span class="material-symbols-outlined text-[20px]">table_chart</span>
+<span class="font-label-md text-label-md">Missing Matrix</span>
+</a>
+<!-- Tab 2: AI Email Drafter -->
+<a class="flex items-center gap-3 text-text-secondary hover:text-text-primary hover:bg-surface-overlay/50 px-space-md py-space-sm rounded-lg transition-colors" href="#drafter">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+<span class="font-label-md text-label-md">AI Email Drafter</span>
+</a>
+<!-- Tab 3: Review & Execute -->
+<a class="flex items-center gap-3 text-text-secondary hover:text-text-primary hover:bg-surface-overlay/50 px-space-md py-space-sm rounded-lg transition-colors" href="#review">
+<span class="material-symbols-outlined text-[20px]">mark_email_read</span>
+<span class="font-label-md text-label-md">Review &amp; Execute</span>
+</a>
+<!-- Tab 4: Cadence Rules -->
+<a class="flex items-center gap-3 text-text-secondary hover:text-text-primary hover:bg-surface-overlay/50 px-space-md py-space-sm rounded-lg transition-colors" href="#cadence">
+<span class="material-symbols-outlined text-[20px]">schedule_send</span>
+<span class="font-label-md text-label-md">Cadence Rules</span>
+</a>
+<!-- Tab 5: Impact Telemetry (ACTIVE) -->
+<a class="flex items-center gap-3 bg-surface-overlay text-accent-electric border-r-2 border-accent-electric font-semibold px-space-md py-space-sm rounded-lg" href="#metrics">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">monitoring</span>
+<span class="font-label-md text-label-md">Impact Telemetry</span>
+</a>
+<!-- Tab 6: Policy Guardrails -->
+<a class="flex items-center gap-3 text-text-secondary hover:text-text-primary hover:bg-surface-overlay/50 px-space-md py-space-sm rounded-lg transition-colors" href="#guardrails">
+<span class="material-symbols-outlined text-[20px]">security</span>
+<span class="font-label-md text-label-md">Policy Guardrails</span>
+</a>
+</div>
+</div>
+<!-- Bottom / Footer Navigation -->
+<div class="pt-6 border-t border-border-subtle space-y-1">
+<div class="font-label-caps text-label-caps text-text-muted px-space-md py-1 uppercase tracking-wider">
+          System Integrations
+        </div>
+<a class="flex items-center gap-3 text-text-secondary hover:text-text-primary hover:bg-surface-overlay/50 px-space-md py-space-sm rounded-lg transition-colors" href="#audit">
+<span class="material-symbols-outlined text-[20px]">history</span>
+<span class="font-label-md text-label-md">Audit Trail</span>
+</a>
+<a class="flex items-center gap-3 text-text-secondary hover:text-text-primary hover:bg-surface-overlay/50 px-space-md py-space-sm rounded-lg transition-colors" href="#api">
+<span class="material-symbols-outlined text-[20px]">hub</span>
+<span class="font-label-md text-label-md">API Gateway</span>
+</a>
+<div class="mt-4 p-3 rounded-lg bg-surface-canvas/60 border border-border-subtle">
+<div class="flex items-center justify-between text-xs text-text-muted mb-1">
+<span class="font-label-caps text-label-caps">CO-PILOT ENGINE</span>
+<span class="text-accent-electric font-bold">v3.4.12</span>
+</div>
+<div class="w-full bg-surface-overlay h-1.5 rounded-full overflow-hidden">
+<div class="bg-accent-electric h-full w-[94%]"></div>
+</div>
+</div>
+</div>
+</aside>
+<!-- MAIN WORKSPACE CONTENT AREA -->
+<main class="flex-1 p-space-xl overflow-y-auto max-w-[calc(1440px-16rem)]">
+<!-- Top Action & Context Header -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-space-lg border-b border-border-subtle">
+<div>
+<div class="flex items-center gap-3">
+<span class="font-label-caps text-label-caps px-2.5 py-1 rounded bg-accent-violet/20 border border-accent-violet/40 text-secondary font-bold tracking-wider">
+              PILOT PERFORMANCE
+            </span>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded bg-accent-electric/10 border border-accent-electric/30 text-accent-electric">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-caps text-label-caps font-bold">STATISTICAL SIGNIFICANCE PASSED</span>
+</div>
+<span class="font-label-caps text-label-caps text-text-muted">p-value &lt; 0.001 (N=50)</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl font-bold tracking-tight text-text-primary mt-2">
+            5. Pilot Impact &amp; Metrics
+          </h1>
+<p class="font-body-md text-body-md text-text-secondary mt-1">
+            Q4 Pilot Cohort Evaluation: Comparative benchmark of 50 matched institutional onboarding accounts versus baseline standard operations.
+          </p>
+</div>
+<!-- Action Bar with Export Buttons -->
+<div class="flex items-center gap-3 flex-shrink-0">
+<button class="font-label-md text-label-md px-4 py-2 rounded-lg bg-surface-elevated hover:bg-surface-overlay text-text-primary border border-border-prominent flex items-center gap-2 shadow-sm transition-all hover:border-text-primary">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Export Audit Log (FDE Backtest Data)</span>
+</button>
+<button class="font-label-md text-label-md px-4 py-2 rounded-lg bg-accent-violet hover:brightness-110 text-text-primary border border-accent-violet font-semibold flex items-center gap-2 shadow-[0_0_16px_rgba(95,44,255,0.35)] transition-all">
+<span class="material-symbols-outlined text-[18px]">summarize</span>
+<span>Download Pilot Executive Summary</span>
+</button>
+</div>
+</div>
+<!-- HERO KPI BANNER: DOCUMENT CYCLE TIME & VELOCITY IMPACT -->
+<section class="mt-space-lg bg-surface-elevated border border-border-prominent rounded-xl p-space-lg relative overflow-hidden shadow-2xl">
+<!-- Glow highlight accent -->
+<div class="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-accent-electric/5 filter blur-3xl pointer-events-none"></div>
+<div class="absolute -left-20 -bottom-20 w-80 h-80 rounded-full bg-accent-violet/10 filter blur-3xl pointer-events-none"></div>
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-center relative z-10">
+<!-- Primary Metric Callout: 7.2 Days -->
+<div class="xl:col-span-5 border-b xl:border-b-0 xl:border-r border-border-subtle pb-6 xl:pb-0 xl:pr-space-lg">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-caps text-label-caps uppercase text-text-muted tracking-wider">PRIMARY EXPERIMENTAL METRIC</span>
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-accent-electric/15 text-accent-electric font-semibold border border-accent-electric/30">
+                Target Met (Target Hypothesis ≤ 8.0 Days, Passed Delta -0.8d)
+              </span>
+</div>
+<div class="flex items-baseline gap-4 mt-2">
+<span class="font-display-hero text-display-hero font-extrabold text-text-primary tracking-tight">
+                7.2
+              </span>
+<span class="font-headline-md text-headline-md font-bold text-accent-electric">
+                Days
+              </span>
+<div class="ml-auto text-right">
+<span class="font-headline-sm text-headline-sm font-bold text-accent-electric flex items-center justify-end">
+<span class="material-symbols-outlined text-[22px]">trending_down</span>
+                  -58%
+                </span>
+<span class="font-label-caps text-label-caps text-text-muted">Document Cycle Time</span>
+</div>
+</div>
+<div class="mt-4 flex items-center justify-between text-xs text-text-secondary bg-surface-canvas/60 p-2.5 rounded-lg border border-border-subtle">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-text-muted"></span>
+<span>Baseline: <strong class="text-text-primary font-semibold">17.1 days</strong></span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-accent-violet"></span>
+<span>Target: <strong class="text-text-primary font-semibold">≤ 8.0 days</strong></span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-accent-electric shadow-[0_0_6px_#02F576]"></span>
+<span>Actual: <strong class="text-accent-electric font-bold">7.2 days</strong></span>
+</div>
+</div>
+</div>
+<!-- Comparative Timeline Range Visualization -->
+<div class="xl:col-span-7 flex flex-col justify-between h-full space-y-4">
+<div>
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-md text-label-md text-text-primary font-semibold">Benchmark Distribution &amp; Target Hypothesis Boundary</span>
+<span class="font-label-caps text-label-caps text-accent-electric font-bold">STATISTICAL DELTA: -9.9 DAYS FASTER</span>
+</div>
+<!-- Multi-marker Progress Bar -->
+<div class="relative w-full h-8 bg-surface-canvas rounded-lg p-1 border border-border-subtle flex items-center">
+<!-- Base track background -->
+<div class="relative w-full h-4 bg-surface-overlay rounded overflow-hidden">
+<!-- Actual progress to 7.2d (approx 42% of 17.1 max) -->
+<div class="h-full bg-gradient-to-r from-accent-violet to-accent-electric rounded" style="width: 42.1%;"></div>
+</div>
+<!-- Markers -->
+<!-- 0d -->
+<div class="absolute left-2 top-8 text-[11px] font-label-caps text-text-muted">0d</div>
+<!-- 7.2d Actual -->
+<div class="absolute top-0 bottom-0 flex flex-col items-center justify-center" style="left: 42.1%;">
+<div class="w-2.5 h-6 bg-accent-electric rounded shadow-[0_0_10px_#02F576] border border-surface-canvas"></div>
+<span class="absolute -top-6 font-label-caps text-label-caps font-bold text-accent-electric bg-surface-elevated px-1.5 py-0.5 rounded border border-accent-electric/40">7.2d (Actual)</span>
+</div>
+<!-- 8.0d Goal -->
+<div class="absolute top-0 bottom-0 flex flex-col items-center justify-center" style="left: 46.7%;">
+<div class="w-1 h-6 bg-secondary-fixed border-dashed border-l-2 border-accent-violet"></div>
+<span class="absolute -bottom-6 font-label-caps text-label-caps font-semibold text-secondary">8.0d Goal</span>
+</div>
+<!-- 17.1d Baseline Max -->
+<div class="absolute top-0 bottom-0 flex flex-col items-center justify-center right-1" style="left: 98%;">
+<div class="w-1.5 h-6 bg-text-muted rounded"></div>
+<span class="absolute -top-6 right-0 font-label-caps text-label-caps font-semibold text-text-muted whitespace-nowrap">17.1d Baseline</span>
+</div>
+</div>
+</div>
+<!-- Velocity Impact Module: 62d -> 52.2d -->
+<div class="pt-4 border-t border-border-subtle flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<span class="font-label-caps text-label-caps text-text-muted uppercase">END-TO-END ONBOARDING VELOCITY IMPACT</span>
+<div class="flex items-center gap-3 mt-1">
+<span class="font-headline-sm text-headline-sm font-bold text-text-secondary line-through">62.0 Days</span>
+<span class="material-symbols-outlined text-accent-electric text-[20px]">arrow_forward</span>
+<span class="font-headline-sm text-headline-sm font-bold text-text-primary">52.2 Days Total</span>
+</div>
+</div>
+<div class="flex items-center gap-3 bg-surface-overlay px-4 py-2 rounded-lg border border-accent-electric/20">
+<div class="w-9 h-9 rounded-md bg-accent-electric/10 flex items-center justify-center text-accent-electric">
+<span class="material-symbols-outlined text-[20px]">speed</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm font-bold text-accent-electric">+15.8% Swift</div>
+<div class="font-label-caps text-label-caps text-text-secondary">Gross Cycle Velocity Gain</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6-VECTOR DIAGNOSTIC GRID -->
+<section class="mt-space-lg">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-accent-electric text-[20px]">analytics</span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-text-primary">Comprehensive 6-Vector Diagnostic Grid</h2>
+</div>
+<span class="font-label-caps text-label-caps text-text-muted">50 VERIFIED INSTITUTIONAL MATCH CASES</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+<!-- Card 1: Chase Rounds / Case -->
+<div class="bg-surface-elevated border border-border-subtle hover:border-accent-electric/40 rounded-xl p-space-md transition-all hover:-translate-y-0.5">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-text-muted uppercase tracking-wider">VECTOR 01 // FREQUENCY</span>
+<h3 class="font-label-lg text-label-lg text-text-primary font-semibold mt-1">Chase Rounds / Case</h3>
+</div>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-caps font-bold bg-accent-electric/15 text-accent-electric border border-accent-electric/30">
+                -61.3%
+              </span>
+</div>
+<div class="flex items-baseline gap-3 my-3">
+<span class="font-headline-xl text-headline-xl font-extrabold text-text-primary tracking-tight">1.2</span>
+<span class="font-label-md text-label-md text-text-secondary">rounds</span>
+<span class="font-label-caps text-label-caps text-text-muted ml-auto">vs 3.1 baseline</span>
+</div>
+<!-- Sparkline Visual -->
+<div class="h-10 w-full flex items-end gap-1.5 pt-2 border-t border-border-subtle">
+<div class="w-1/6 bg-surface-overlay h-[90%] rounded-t" title="Baseline: 3.1"></div>
+<div class="w-1/6 bg-surface-overlay h-[75%] rounded-t"></div>
+<div class="w-1/6 bg-accent-violet/40 h-[60%] rounded-t"></div>
+<div class="w-1/6 bg-accent-violet/70 h-[45%] rounded-t"></div>
+<div class="w-1/6 bg-accent-electric/70 h-[35%] rounded-t"></div>
+<div class="w-1/6 bg-accent-electric h-[30%] rounded-t shadow-[0_0_8px_#02F576]" title="Current: 1.2"></div>
+</div>
+<p class="font-body-md text-[12px] leading-4 text-text-muted mt-3">
+              Significant reduction in recurring chase friction loops; 82% of clients resolved requirements in round 1.
+            </p>
+</div>
+<!-- Card 2: Day-0 Gap Recall -->
+<div class="bg-surface-elevated border border-border-subtle hover:border-accent-electric/40 rounded-xl p-space-md transition-all hover:-translate-y-0.5">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-text-muted uppercase tracking-wider">VECTOR 02 // COMPLETENESS</span>
+<h3 class="font-label-lg text-label-lg text-text-primary font-semibold mt-1">Day-0 Gap Recall</h3>
+</div>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-caps font-bold bg-accent-electric/15 text-accent-electric border border-accent-electric/30">
+                High Fidelity
+              </span>
+</div>
+<div class="flex items-baseline gap-3 my-3">
+<span class="font-headline-xl text-headline-xl font-extrabold text-accent-electric tracking-tight">94.6%</span>
+<span class="font-label-caps text-label-caps text-text-muted ml-auto">Target: ≥ 90.0%</span>
+</div>
+<!-- Mini Progress Visual -->
+<div class="w-full bg-surface-overlay h-2 rounded-full overflow-hidden my-2">
+<div class="bg-accent-electric h-full rounded-full shadow-[0_0_10px_#02F576]" style="width: 94.6%;"></div>
+</div>
+<div class="flex items-center justify-between text-[11px] font-label-caps text-text-muted pt-1">
+<span>Eventual Gaps Captured at T=0</span>
+<span class="text-text-primary font-bold">473 / 500 Gaps</span>
+</div>
+<p class="font-body-md text-[12px] leading-4 text-text-muted mt-3">
+              Share of eventual document discrepancies correctly identified on first ingestion pass without downstream surprises.
+            </p>
+</div>
+<!-- Card 3: Gap Precision -->
+<div class="bg-surface-elevated border border-border-subtle hover:border-accent-electric/40 rounded-xl p-space-md transition-all hover:-translate-y-0.5">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-text-muted uppercase tracking-wider">VECTOR 03 // RELIABILITY</span>
+<h3 class="font-label-lg text-label-lg text-text-primary font-semibold mt-1">Gap Precision</h3>
+</div>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-caps font-bold bg-accent-violet/20 text-secondary border border-accent-violet/40">
+                Optimal
+              </span>
+</div>
+<div class="flex items-baseline gap-3 my-3">
+<span class="font-headline-xl text-headline-xl font-extrabold text-text-primary tracking-tight">96.2%</span>
+<span class="font-label-caps text-label-caps text-text-muted ml-auto">Retention Rate</span>
+</div>
+<!-- Precision Dial / Micro-graph -->
+<div class="w-full bg-surface-overlay h-2 rounded-full overflow-hidden my-2">
+<div class="bg-gradient-to-r from-accent-violet to-accent-electric h-full rounded-full" style="width: 96.2%;"></div>
+</div>
+<div class="flex items-center justify-between text-[11px] font-label-caps text-text-muted pt-1">
+<span>False Positives Discarded</span>
+<span class="text-accent-electric font-bold">Only 3.8%</span>
+</div>
+<p class="font-body-md text-[12px] leading-4 text-text-muted mt-3">
+              RM retention rate of AI-proposed gaps. High signal-to-noise ratio protects corporate relationship credibility.
+            </p>
+</div>
+<!-- Card 4: RM Edit Rate on Drafts -->
+<div class="bg-surface-elevated border border-border-subtle hover:border-accent-electric/40 rounded-xl p-space-md transition-all hover:-translate-y-0.5">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-text-muted uppercase tracking-wider">VECTOR 04 // AI AUTONOMY</span>
+<h3 class="font-label-lg text-label-lg text-text-primary font-semibold mt-1">RM Edit Rate on Drafts</h3>
+</div>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-caps font-bold bg-accent-electric/15 text-accent-electric border border-accent-electric/30">
+                Auto-Ready
+              </span>
+</div>
+<div class="flex items-baseline gap-3 my-3">
+<span class="font-headline-xl text-headline-xl font-extrabold text-accent-electric tracking-tight">8.4%</span>
+<span class="font-label-md text-label-md text-text-secondary">rework</span>
+<span class="font-label-caps text-label-caps text-text-muted ml-auto">91.6% 1-Click Sent</span>
+</div>
+<div class="w-full bg-surface-overlay h-2 rounded-full overflow-hidden my-2">
+<div class="bg-accent-electric h-full rounded-full" style="width: 8.4%;"></div>
+</div>
+<div class="flex items-center justify-between text-[11px] font-label-caps text-text-muted pt-1">
+<span>Minimal Copilot Interventions</span>
+<span class="text-text-primary font-semibold">4 / 50 cases edited</span>
+</div>
+<p class="font-body-md text-[12px] leading-4 text-text-muted mt-3">
+              Context-aware generative templates accurately mirrored senior RM tone and institutional banking terminology.
+            </p>
+</div>
+<!-- Card 5: RM Mins per Chase -->
+<div class="bg-surface-elevated border border-border-subtle hover:border-accent-electric/40 rounded-xl p-space-md transition-all hover:-translate-y-0.5">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-text-muted uppercase tracking-wider">VECTOR 05 // TIME EFFICIENCY</span>
+<h3 class="font-label-lg text-label-lg text-text-primary font-semibold mt-1">RM Mins per Chase</h3>
+</div>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-caps font-bold bg-accent-electric/15 text-accent-electric border border-accent-electric/30">
+                -83.8% Gain
+              </span>
+</div>
+<div class="flex items-baseline gap-3 my-3">
+<span class="font-headline-xl text-headline-xl font-extrabold text-text-primary tracking-tight">4.2</span>
+<span class="font-label-md text-label-md text-text-secondary">mins</span>
+<span class="font-label-caps text-label-caps text-text-muted ml-auto">vs 26.0m manual</span>
+</div>
+<div class="flex items-center gap-2 my-2">
+<div class="flex-1 bg-surface-overlay h-4 rounded overflow-hidden flex">
+<div class="bg-accent-electric h-full" style="width: 16.2%;"></div>
+<div class="bg-surface-container-high h-full" style="width: 83.8%;"></div>
+</div>
+<span class="font-label-caps text-label-caps text-accent-electric font-bold">21.8m Saved</span>
+</div>
+<div class="flex items-center justify-between text-[11px] font-label-caps text-text-muted pt-1">
+<span>Manual Baseline Draft Time</span>
+<span class="text-text-primary font-semibold">26 mins / chase</span>
+</div>
+<p class="font-body-md text-[12px] leading-4 text-text-muted mt-3">
+              Eliminated manual portal cross-checking, W-8BEN/W-9 validation lookups, and bespoke follow-up drafting.
+            </p>
+</div>
+<!-- Card 6: Client Time-to-First-Reply -->
+<div class="bg-surface-elevated border border-border-subtle hover:border-accent-electric/40 rounded-xl p-space-md transition-all hover:-translate-y-0.5">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-text-muted uppercase tracking-wider">VECTOR 06 // CLIENT RESPONSIVENESS</span>
+<h3 class="font-label-lg text-label-lg text-text-primary font-semibold mt-1">Client Time-to-First-Reply</h3>
+</div>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-caps font-bold bg-accent-violet/20 text-secondary border border-accent-violet/40">
+                2.5x Faster
+              </span>
+</div>
+<div class="flex items-baseline gap-3 my-3">
+<span class="font-headline-xl text-headline-xl font-extrabold text-text-primary tracking-tight">1.8</span>
+<span class="font-label-md text-label-md text-text-secondary">days</span>
+<span class="font-label-caps text-label-caps text-text-muted ml-auto">vs 4.6d legacy</span>
+</div>
+<!-- Comparison Bar -->
+<div class="h-10 w-full flex items-center justify-between gap-3 pt-1 border-t border-border-subtle">
+<div class="flex-1">
+<div class="flex justify-between text-[10px] font-label-caps text-text-muted mb-1">
+<span>COPILOT PILOT</span>
+<span class="text-accent-electric font-bold">1.8 Days</span>
+</div>
+<div class="w-full bg-surface-overlay h-1.5 rounded-full">
+<div class="bg-accent-electric h-full rounded-full" style="width: 39%;"></div>
+</div>
+</div>
+<div class="flex-1">
+<div class="flex justify-between text-[10px] font-label-caps text-text-muted mb-1">
+<span>LEGACY EMAIL</span>
+<span class="text-text-muted">4.6 Days</span>
+</div>
+<div class="w-full bg-surface-overlay h-1.5 rounded-full">
+<div class="bg-surface-container-high h-full rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+</div>
+<p class="font-body-md text-[12px] leading-4 text-text-muted mt-3">
+              Simplified action matrices with direct upload links accelerated legal counsel and CFO client authorizations.
+            </p>
+</div>
+</div>
+</section>
+<!-- GUARDRAILS TELEMETRY & COMPLIANCE MONITORING BAR -->
+<section class="mt-space-lg">
+<div class="bg-surface-container-lowest border border-accent-violet/30 rounded-xl p-space-md shadow-lg relative overflow-hidden">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<!-- Left compliance title & status -->
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-overlay border border-accent-violet/40 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-lg text-label-lg font-bold text-text-primary">Guardrails Telemetry &amp; Regulatory Compliance</span>
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-accent-electric/15 text-accent-electric font-bold border border-accent-electric/30">
+                    ZERO BREACHES
+                  </span>
+</div>
+<div class="font-label-caps text-label-caps text-text-muted mt-0.5">
+                  Automated Pre-Dispatch Rule Engines &amp; Human-in-the-Loop Audit Trails
+                </div>
+</div>
+</div>
+<!-- Guardrails stats cluster -->
+<div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-text-secondary font-label-md text-label-md">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-accent-electric"></span>
+<span>Zero Compliance Rejections</span>
+</div>
+<div class="h-4 w-px bg-border-prominent hidden sm:block"></div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-accent-electric"></span>
+<span>0 Client Complaints</span>
+</div>
+<div class="h-4 w-px bg-border-prominent hidden sm:block"></div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-accent-electric"></span>
+<span>Downstream Rework <strong class="text-text-primary">0.0%</strong></span>
+</div>
+<div class="h-4 w-px bg-border-prominent hidden sm:block"></div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px]">verified</span>
+<span>Audit Verified</span>
+</div>
+</div>
+<!-- Certifications Badges -->
+<div class="flex items-center gap-2 self-start lg:self-center">
+<span class="font-label-caps text-label-caps px-2.5 py-1 rounded bg-surface-overlay border border-border-prominent text-text-primary font-bold">
+                SOC2 TYPE II
+              </span>
+<span class="font-label-caps text-label-caps px-2.5 py-1 rounded bg-surface-overlay border border-border-prominent text-accent-electric font-bold">
+                FINRA RULE 4511
+              </span>
+</div>
+</div>
+</div>
+</section>
+<!-- EXPERIMENTAL BACKTEST & STATISTICAL COHORT TABLE -->
+<section class="mt-space-lg bg-surface-elevated border border-border-subtle rounded-xl overflow-hidden">
+<div class="px-space-md py-3 border-b border-border-subtle flex items-center justify-between bg-surface-overlay/50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-muted text-[18px]">table_rows</span>
+<span class="font-label-md text-label-md text-text-primary font-semibold">Q4 Institutional Client Matched Sample Breakdown (First 5 of 50 Records)</span>
+</div>
+<span class="font-label-caps text-label-caps text-accent-electric">ALL SIGN-OFFS COMPLIANT</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left text-xs">
+<thead class="bg-surface-canvas/50 text-text-muted uppercase font-label-caps text-[10px] tracking-wider border-b border-border-subtle">
+<tr>
+<th class="py-2.5 px-4">Entity Legal Name</th>
+<th class="py-2.5 px-4">Jurisdiction</th>
+<th class="py-2.5 px-4">Initial Gaps</th>
+<th class="py-2.5 px-4">Cycle Time</th>
+<th class="py-2.5 px-4">RM Edits</th>
+<th class="py-2.5 px-4">First Reply</th>
+<th class="py-2.5 px-4 text-right">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-subtle font-body-md text-text-secondary">
+<tr class="hover:bg-surface-overlay/40 transition-colors">
+<td class="py-3 px-4 font-semibold text-text-primary flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-electric"></span>
+                  Vanguard Prime Capital Ltd
+                </td>
+<td class="py-3 px-4">UK (FCA)</td>
+<td class="py-3 px-4">8 Docs (W-8BEN-E, Tax Res, LEI)</td>
+<td class="py-3 px-4 text-accent-electric font-semibold">6.4 Days</td>
+<td class="py-3 px-4">0 Edits (1-Click)</td>
+<td class="py-3 px-4">1.2 Days</td>
+<td class="py-3 px-4 text-right">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-accent-electric/15 text-accent-electric">ONBOARDED</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-overlay/40 transition-colors">
+<td class="py-3 px-4 font-semibold text-text-primary flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-electric"></span>
+                  Apex Meridian Multi-Strategy LP
+                </td>
+<td class="py-3 px-4">US (Delaware)</td>
+<td class="py-3 px-4">11 Docs (AML/KYC, Formation Cert)</td>
+<td class="py-3 px-4 text-accent-electric font-semibold">7.1 Days</td>
+<td class="py-3 px-4">1 Edit (Custom CC)</td>
+<td class="py-3 px-4">1.8 Days</td>
+<td class="py-3 px-4 text-right">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-accent-electric/15 text-accent-electric">ONBOARDED</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-overlay/40 transition-colors">
+<td class="py-3 px-4 font-semibold text-text-primary flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-electric"></span>
+                  Helios Global Macro Asset Fund
+                </td>
+<td class="py-3 px-4">Luxembourg (CSSF)</td>
+<td class="py-3 px-4">7 Docs (MIFID II, Articles)</td>
+<td class="py-3 px-4 text-accent-electric font-semibold">5.8 Days</td>
+<td class="py-3 px-4">0 Edits (1-Click)</td>
+<td class="py-3 px-4">1.0 Days</td>
+<td class="py-3 px-4 text-right">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-accent-electric/15 text-accent-electric">ONBOARDED</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-overlay/40 transition-colors">
+<td class="py-3 px-4 font-semibold text-text-primary flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-electric"></span>
+                  Nordic Sovereign Real Estate Trust
+                </td>
+<td class="py-3 px-4">Norway</td>
+<td class="py-3 px-4">14 Docs (Beneficial Ownership)</td>
+<td class="py-3 px-4 text-accent-electric font-semibold">7.9 Days</td>
+<td class="py-3 px-4">0 Edits (1-Click)</td>
+<td class="py-3 px-4">2.4 Days</td>
+<td class="py-3 px-4 text-right">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-accent-electric/15 text-accent-electric">ONBOARDED</span>
+</td>
+</tr>
+<tr class="hover:bg-surface-overlay/40 transition-colors">
+<td class="py-3 px-4 font-semibold text-text-primary flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-electric"></span>
+                  Pacific Blue Sovereign Wealth SPC
+                </td>
+<td class="py-3 px-4">Singapore (MAS)</td>
+<td class="py-3 px-4">9 Docs (Authorized Signatory Reg)</td>
+<td class="py-3 px-4 text-accent-electric font-semibold">7.4 Days</td>
+<td class="py-3 px-4">1 Edit (Signer Note)</td>
+<td class="py-3 px-4">1.5 Days</td>
+<td class="py-3 px-4 text-right">
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded bg-accent-electric/15 text-accent-electric">ONBOARDED</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-space-md py-2.5 bg-surface-canvas/40 border-t border-border-subtle flex items-center justify-between text-xs text-text-muted">
+<span>Showing 5 of 50 matched experimental pilot entities</span>
+<a class="text-accent-electric font-semibold hover:underline flex items-center gap-1" href="#view-all">
+<span>View Full 50-Case Telemetry</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+</section>
+<!-- FOOTER NOTE & TIMESTAMP -->
+<footer class="mt-space-lg pt-4 pb-8 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between text-xs text-text-muted gap-2">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-accent-electric"></span>
+<span>Northgate Bank Risk &amp; Technology Governance Board Approved Pilot Report</span>
+</div>
+<div>
+<span>Telemetry Snapshot Timestamp: 2024-Q4-Live-UTC | Build 3.4.12-prod</span>
+</div>
+</footer>
+</main>
+</div>
+</body></html>

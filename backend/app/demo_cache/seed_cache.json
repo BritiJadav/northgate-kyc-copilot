@@ -1,0 +1,326 @@
+{
+  "DocClassifierAgent_priya_raman_passport.pdf": {
+    "doc_type": "Passport",
+    "party_name": "Priya Raman",
+    "issue_date": "2016-09-15",
+    "expiry_date": "2026-09-14",
+    "page_count": 1,
+    "pages_present": "1 of 1",
+    "signed": true
+  },
+  "DocClassifierAgent_priya_raman_utility_bill.pdf": {
+    "doc_type": "Proof of Address",
+    "party_name": "Priya Raman",
+    "issue_date": "2026-06-30",
+    "expiry_date": null,
+    "page_count": 1,
+    "pages_present": "1 of 1",
+    "signed": false
+  },
+  "DocClassifierAgent_harbourline_bank_statement.pdf": {
+    "doc_type": "Bank Statement",
+    "party_name": "Harbourline Logistics Ltd",
+    "issue_date": "2026-10-31",
+    "expiry_date": null,
+    "page_count": 4,
+    "pages_present": "1-2 of 4",
+    "signed": false
+  },
+  "DocClassifierAgent_okafor_trust_deed.pdf": {
+    "doc_type": "Trust Deed",
+    "party_name": "Okafor Family Trust",
+    "issue_date": "2015-11-15",
+    "expiry_date": null,
+    "page_count": 12,
+    "pages_present": "1-11 of 12",
+    "signed": false
+  },
+  "EmailDrafterAgent_1": {
+    "subject": "Northgate KYC Onboarding: Outstanding Documentation Required for Priya Raman",
+    "body": "Dear Priya,\n\nThank you for choosing Northgate. We are pleased to assist you with onboarding. To proceed with setting up your account, we require the following outstanding documentation by [RM TO CONFIRM: deadline]:\n\n1. Passport / National ID: The passport provided expired on 14 September 2026. Please supply a certified copy of your current, unexpired passport.\n2. Proof of Address: The water utility bill dated 30 June 2026 exceeds our 3-month validity limit. Please provide a utility bill or bank statement dated within the last 3 months.\n3. Source of Funds Declaration: Please complete and return our standard source of funds declaration form.\n\nPlease reply directly to this email with the requested documents attached.\n\nWarm regards,\nSarah Jenkins\nRelationship Manager, Northgate",
+    "notes_for_rm": "Client's passport expired recently. Water bill was dated June 2026. Standard 3-month recency rule applies.",
+    "possible_followons": null
+  },
+  "OwnershipExtractorAgent_COMPANY_A": {
+    "edges": [
+      {
+        "owner": "Nadia Finch",
+        "owned": "Alder & Finch Ltd",
+        "shares_count": 60,
+        "percentage": 60.0,
+        "share_class": "Ordinary",
+        "votes_per_share": 1.0,
+        "as_at_date": "current",
+        "doc": "alder_finch_register.pdf",
+        "page": 1,
+        "line": 7,
+        "verbatim_quote": "Shares Held: 60 Ordinary Shares (Certificate #AF-001)"
+      },
+      {
+        "owner": "Owen Alder",
+        "owned": "Alder & Finch Ltd",
+        "shares_count": 40,
+        "percentage": 40.0,
+        "share_class": "Ordinary",
+        "votes_per_share": 1.0,
+        "as_at_date": "current",
+        "doc": "alder_finch_register.pdf",
+        "page": 1,
+        "line": 12,
+        "verbatim_quote": "Shares Held: 40 Ordinary Shares (Certificate #AF-002)"
+      }
+    ],
+    "officers": [
+      {
+        "name": "Nadia Finch",
+        "role": "Director",
+        "doc": "alder_finch_register.pdf",
+        "page": 1,
+        "line": 16,
+        "verbatim_quote": "Director: Nadia Finch (Appointed 15 April 2021)"
+      },
+      {
+        "name": "Owen Alder",
+        "role": "Director",
+        "doc": "alder_finch_register.pdf",
+        "page": 1,
+        "line": 17,
+        "verbatim_quote": "Director: Owen Alder (Appointed 15 April 2021)"
+      }
+    ],
+    "entity_facts": [
+      "Issued Capital: 100 Ordinary Shares of \u00a31.00 each"
+    ],
+    "has_share_register": true,
+    "notes": "Single tier ownership register."
+  },
+  "OwnershipExtractorAgent_COMPANY_B": {
+    "edges": [
+      {
+        "owner": "Ines Duarte",
+        "owned": "Brightwave Software Ltd",
+        "shares_count": 600,
+        "percentage": 40.0,
+        "share_class": "Class A Ordinary",
+        "votes_per_share": 1.0,
+        "as_at_date": "current",
+        "doc": "brightwave_register.pdf",
+        "page": 1,
+        "line": 7,
+        "verbatim_quote": "Number of Shares: 600"
+      },
+      {
+        "owner": "Lumen Growth LP",
+        "owned": "Brightwave Software Ltd",
+        "shares_count": 500,
+        "percentage": 33.33,
+        "share_class": "Class B Ordinary",
+        "votes_per_share": 10.0,
+        "as_at_date": "current",
+        "doc": "brightwave_register.pdf",
+        "page": 1,
+        "line": 13,
+        "verbatim_quote": "Number of Shares: 500"
+      },
+      {
+        "owner": "Kofi Mensah",
+        "owned": "Brightwave Software Ltd",
+        "shares_count": 400,
+        "percentage": 26.67,
+        "share_class": "Class A Ordinary",
+        "votes_per_share": 1.0,
+        "as_at_date": "current",
+        "doc": "brightwave_register.pdf",
+        "page": 1,
+        "line": 19,
+        "verbatim_quote": "Number of Shares: 400"
+      }
+    ],
+    "officers": [],
+    "entity_facts": [
+      "Two share classes: Class A (1 vote), Class B (10 votes)"
+    ],
+    "has_share_register": true,
+    "notes": "Articles specify 10 votes per share for Class B."
+  },
+  "OwnershipExtractorAgent_COMPANY_C": {
+    "edges": [
+      {
+        "owner": "Maya Iyer",
+        "owned": "Calder Marine Services Ltd",
+        "shares_count": 110,
+        "percentage": 55.0,
+        "share_class": "Ordinary",
+        "votes_per_share": 1.0,
+        "as_at_date": "2025-08-02",
+        "doc": "calder_stock_transfer_scan.png",
+        "page": 1,
+        "line": 14,
+        "verbatim_quote": "Maya Iyer 110 shares (55%)"
+      },
+      {
+        "owner": "Lars Pedersen",
+        "owned": "Calder Marine Services Ltd",
+        "shares_count": 90,
+        "percentage": 45.0,
+        "share_class": "Ordinary",
+        "votes_per_share": 1.0,
+        "as_at_date": "2025-08-02",
+        "doc": "calder_stock_transfer_scan.png",
+        "page": 1,
+        "line": 14,
+        "verbatim_quote": "Lars Pedersen 90 shares (45%)"
+      }
+    ],
+    "officers": [],
+    "entity_facts": [
+      "Transfer of 60 shares on 02 August 2025 from Lars Pedersen to Maya Iyer"
+    ],
+    "has_share_register": true,
+    "notes": "Transfer form supersedes 2023 historical register."
+  },
+  "OwnershipExtractorAgent_COMPANY_D": {
+    "edges": [],
+    "officers": [],
+    "entity_facts": [
+      "Formation memorandum from 20 November 2019 only",
+      "No share register provided"
+    ],
+    "has_share_register": false,
+    "notes": "Only formation memorandum exists. Current ownership NOT_FOUND."
+  },
+  "OwnershipExtractorAgent_COMPANY_E": {
+    "edges": [
+      {
+        "owner": "Halden Holdings B.V.",
+        "owned": "Kestrel Trading Ltd",
+        "shares_count": 480,
+        "percentage": 48.0,
+        "share_class": "Ordinary",
+        "votes_per_share": 1.0,
+        "as_at_date": "current",
+        "doc": "kestrel_register.pdf",
+        "page": 1,
+        "line": 7,
+        "verbatim_quote": "Shares Held: 480 Ordinary Shares (48.0% of total issued equity)"
+      },
+      {
+        "owner": "Pilar Investments Ltd",
+        "owned": "Kestrel Trading Ltd",
+        "shares_count": 270,
+        "percentage": 27.0,
+        "share_class": "Ordinary",
+        "votes_per_share": 1.0,
+        "as_at_date": "current",
+        "doc": "kestrel_register.pdf",
+        "page": 1,
+        "line": 11,
+        "verbatim_quote": "Shares Held: 270 Ordinary Shares (27.0% of total issued equity)"
+      },
+      {
+        "owner": "Samira Qadri",
+        "owned": "Kestrel Trading Ltd",
+        "shares_count": 150,
+        "percentage": 15.0,
+        "share_class": "Ordinary",
+        "votes_per_share": 1.0,
+        "as_at_date": "current",
+        "doc": "kestrel_register.pdf",
+        "page": 1,
+        "line": 15,
+        "verbatim_quote": "Shares Held: 150 Ordinary Shares (15.0% of total issued equity)"
+      },
+      {
+        "owner": "Meridian Nominees Ltd",
+        "owned": "Kestrel Trading Ltd",
+        "shares_count": 100,
+        "percentage": 10.0,
+        "share_class": "Ordinary",
+        "votes_per_share": 1.0,
+        "as_at_date": "current",
+        "doc": "kestrel_register.pdf",
+        "page": 1,
+        "line": 19,
+        "verbatim_quote": "Shares Held: 100 Ordinary Shares (10.0% of total issued equity)"
+      },
+      {
+        "owner": "Norvik Group S.A.",
+        "owned": "Halden Holdings B.V.",
+        "shares_count": null,
+        "percentage": 60.0,
+        "share_class": "Ordinary",
+        "votes_per_share": 1.0,
+        "as_at_date": "current",
+        "doc": "halden_holdings_register.pdf",
+        "page": 1,
+        "line": 8,
+        "verbatim_quote": "Aandelenbezit: 60% van het geplaatste kapitaal (60.0% interest)"
+      },
+      {
+        "owner": "Tomas Berg",
+        "owned": "Halden Holdings B.V.",
+        "shares_count": null,
+        "percentage": 40.0,
+        "share_class": "Ordinary",
+        "votes_per_share": 1.0,
+        "as_at_date": "current",
+        "doc": "halden_holdings_register.pdf",
+        "page": 1,
+        "line": 14,
+        "verbatim_quote": "Aandelenbezit: 40% van het geplaatste kapitaal (40.0% interest)"
+      },
+      {
+        "owner": "Elena Voss",
+        "owned": "Norvik Group S.A.",
+        "shares_count": 50,
+        "percentage": 50.0,
+        "share_class": "Ordinary",
+        "votes_per_share": 1.0,
+        "as_at_date": "current",
+        "doc": "norvik_group_register_fr.pdf",
+        "page": 1,
+        "line": 8,
+        "verbatim_quote": "Actions d\u00e9tenues: 50 actions ordinaires (50.0% du capital social)"
+      },
+      {
+        "owner": "Thomas Berg",
+        "owned": "Norvik Group S.A.",
+        "shares_count": 50,
+        "percentage": 50.0,
+        "share_class": "Ordinary",
+        "votes_per_share": 1.0,
+        "as_at_date": "current",
+        "doc": "norvik_group_register_fr.pdf",
+        "page": 1,
+        "line": 14,
+        "verbatim_quote": "Actions d\u00e9tenues: 50 actions ordinaires (50.0% du capital social)"
+      }
+    ],
+    "officers": [
+      {
+        "name": "Samira Qadri",
+        "role": "Director",
+        "doc": "kestrel_register.pdf",
+        "page": 1,
+        "line": 23,
+        "verbatim_quote": "Director: Samira Qadri (Appointed 18 January 2023)"
+      },
+      {
+        "name": "Tomas Berg",
+        "role": "Director",
+        "doc": "halden_holdings_register.pdf",
+        "page": 1,
+        "line": 16,
+        "verbatim_quote": "Bestuurder: Tomas Berg."
+      }
+    ],
+    "entity_facts": [
+      "Tier 1 UK Company",
+      "Tier 2 Dutch B.V.",
+      "Tier 3 Luxembourg S.A.",
+      "BVI Trustee Holding"
+    ],
+    "has_share_register": true,
+    "notes": "Multi-tier holding structure with French and Dutch corporate records."
+  }
+}

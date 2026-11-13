@@ -1,0 +1,42 @@
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node & Frontend Build
+node_modules/
+frontend/node_modules/
+frontend/dist/
+dist/
+.npm/
+npm-debug.log*
+
+# Secrets & Environment Variables
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+credentials.json
+
+# Operating System & IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Ignore generated heavy PDF/image files (generated on demand via seed)
+backend/data/*.pdf
+backend/data/*.png
+backend/data/*.txt
+backend/data/*.db
+!backend/app/demo_cache/*.json

@@ -1,0 +1,106 @@
+name: Build & Deploy to Google Cloud Run
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+  GAR_LOCATION: us-central1
+  GAR_REPOSITORY: northgate-repo
+  SERVICE_NAME: northgate-kyc-copilot
+  REGION: us-central1
+
+jobs:
+  test-and-deploy:
+    name: Test, Build & Deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      # 1. Checkout repository
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # 2. Setup Python & Run Automated Tests
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: 'pip'
+
+      - name: Install Test Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r backend/requirements.txt
+
+      - name: Run Test Suite & Evaluation Harness
+        run: |
+          pytest backend/tests -v
+          python -m backend.eval.run_eval
+
+      # 3. Authenticate to Google Cloud
+      - name: Authenticate to Google Cloud
+        id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      # 4. Setup gcloud CLI
+      - name: Setup gcloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+        with:
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+
+      # 5. Configure Docker authentication for Artifact Registry
+      - name: Configure Docker for Artifact Registry
+        run: |
+          gcloud auth configure-docker ${{ env.GAR_LOCATION }}-docker.pkg.dev --quiet
+
+      # 6. Build & Push Multi-Stage Docker Image
+      - name: Build & Push Docker Image
+        env:
+          IMAGE_TAG: ${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ env.GAR_REPOSITORY }}/${{ env.SERVICE_NAME }}:${{ github.sha }}
+          IMAGE_LATEST: ${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ env.GAR_REPOSITORY }}/${{ env.SERVICE_NAME }}:latest
+        run: |
+          docker build \
+            --tag $IMAGE_TAG \
+            --tag $IMAGE_LATEST \
+            .
+          docker push $IMAGE_TAG
+          docker push $IMAGE_LATEST
+
+      # 7. Deploy Container to Google Cloud Run
+      - name: Deploy to Cloud Run
+        id: deploy
+        uses: google-github-actions/deploy-cloudrun@v2
+        with:
+          service: ${{ env.SERVICE_NAME }}
+          region: ${{ env.REGION }}
+          image: ${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ env.GAR_REPOSITORY }}/${{ env.SERVICE_NAME }}:${{ github.sha }}
+          flags: |
+            --port=8080
+            --allow-unauthenticated
+            --memory=1Gi
+            --cpu=1
+            --min-instances=0
+            --max-instances=3
+            --set-env-vars=DEMO_MODE=true,APP_ENV=production,GEMINI_MODEL=gemini-2.5-flash
+
+      # 8. Set Optional Gemini API Key if secret exists
+      - name: Inject Gemini API Key (if provided)
+        if: ${{ secrets.GEMINI_API_KEY != '' }}
+        run: |
+          gcloud run services update ${{ env.SERVICE_NAME }} \
+            --region ${{ env.REGION }} \
+            --update-env-vars GEMINI_API_KEY="${{ secrets.GEMINI_API_KEY }}" \
+            --quiet
+
+      # 9. Output Live URL in Step Summary
+      - name: Display Deployment URL
+        run: |
+          echo "### 🚀 Deployment Successful!" >> $GITHUB_STEP_SUMMARY
+          echo "**Service URL:** ${{ steps.deploy.outputs.url }}" >> $GITHUB_STEP_SUMMARY
+          echo "Your Northgate KYC Copilot application is now live on Google Cloud Run." >> $GITHUB_STEP_SUMMARY

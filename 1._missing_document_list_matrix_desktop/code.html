@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Northgate Bank Document Chaser Copilot - Missing-Document List &amp; Matrix</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#32353c",
+            "tertiary-container": "#ffcd80",
+            "error-container": "#93000a",
+            "primary-fixed": "#65ff90",
+            "surface-container-high": "#272a31",
+            "tertiary-fixed-dim": "#efbf73",
+            "surface-tint": "#00e46d",
+            "primary-fixed-dim": "#00e46d",
+            "on-primary-fixed": "#00210a",
+            "text-primary": "#FFFFFF",
+            "border-subtle": "rgba(255, 255, 255, 0.08)",
+            "secondary-fixed": "#e6deff",
+            "tertiary-fixed": "#ffddae",
+            "background": "#10131a",
+            "text-muted": "#64748B",
+            "surface-container": "#1d2026",
+            "inverse-on-surface": "#2e3037",
+            "surface-variant": "#32353c",
+            "on-secondary": "#30009b",
+            "outline-variant": "#3b4b3c",
+            "surface": "#10131a",
+            "surface-dim": "#10131a",
+            "secondary-container": "#4f00f1",
+            "on-surface-variant": "#bacbb8",
+            "on-tertiary": "#432c00",
+            "inverse-primary": "#006d31",
+            "error": "#ffb4ab",
+            "border-prominent": "rgba(255, 255, 255, 0.16)",
+            "surface-container-lowest": "#0b0e14",
+            "on-primary-container": "#006b2f",
+            "on-surface": "#e1e2eb",
+            "on-background": "#e1e2eb",
+            "secondary-fixed-dim": "#c9beff",
+            "surface-container-low": "#191c22",
+            "on-error": "#690005",
+            "on-primary-fixed-variant": "#005323",
+            "surface-canvas": "#0B0E14",
+            "surface-bright": "#363940",
+            "outline": "#849584",
+            "accent-electric": "#02F576",
+            "on-tertiary-container": "#795513",
+            "surface-elevated": "#141824",
+            "inverse-surface": "#e1e2eb",
+            "text-secondary": "#9CA3AF",
+            "accent-violet": "#5F2CFF",
+            "on-secondary-container": "#c5baff",
+            "on-secondary-fixed-variant": "#4600d8",
+            "tertiary": "#ffefdc",
+            "on-secondary-fixed": "#1b0062",
+            "surface-overlay": "#1E2435",
+            "on-primary": "#003916",
+            "primary-container": "#02f576",
+            "primary": "#c9ffcd",
+            "secondary": "#c9beff",
+            "on-tertiary-fixed": "#281800",
+            "on-error-container": "#ffdad6"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "margin": "2rem",
+            "gutter-mobile": "1rem",
+            "margin-mobile": "1rem",
+            "gutter": "1.5rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "label-md": ["Montserrat"],
+            "headline-sm": ["Montserrat"],
+            "label-caps": ["Montserrat"],
+            "label-lg": ["Montserrat"],
+            "body-md": ["Montserrat"],
+            "body-lg": ["Montserrat"],
+            "display-hero": ["Montserrat"],
+            "body-xl": ["Montserrat"],
+            "headline-lg": ["Montserrat"],
+            "display-hero-mobile": ["Montserrat"],
+            "headline-md": ["Montserrat"],
+            "headline-xl": ["Montserrat"],
+            "headline-xl-mobile": ["Montserrat"]
+          },
+          "fontSize": {
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "display-hero": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "body-xl": ["18px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "800" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface-canvas text-text-primary antialiased font-body-md overflow-x-hidden selection:bg-accent-electric selection:text-surface-canvas">
+<!-- TOP APP BAR (from Shared Component JSON: desktop_enterprise) -->
+<header class="bg-surface-canvas/80 backdrop-blur-md dark:bg-surface-canvas/80 text-primary dark:text-primary docked full-width top-0 sticky z-50 border-b border-border-subtle dark:border-border-subtle shadow-none transition-all duration-150 ease-in-out">
+<div class="w-full px-space-xl flex items-center justify-between h-16 max-w-[1440px] mx-auto">
+<!-- Brand & Search cluster -->
+<div class="flex items-center gap-space-lg">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-elevated border border-border-subtle flex items-center justify-center">
+<span class="material-symbols-outlined text-accent-electric text-headline-sm" data-icon="account_balance">account_balance</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md font-bold text-accent-electric tracking-tight">Northgate Bank</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-text-primary hidden xl:inline">Document Chaser Copilot</span>
+</div>
+<span class="px-2 py-0.5 rounded-lg bg-accent-violet/20 border border-accent-violet/40 text-secondary font-label-caps text-label-caps ml-2">v2.4 Enterprise</span>
+</div>
+<!-- Search Bar (on_left as specified) -->
+<div class="relative w-72 hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-text-muted text-[18px]" data-icon="search">search</span>
+<input class="w-full h-10 pl-9 pr-3 bg-surface-elevated text-text-primary placeholder:text-text-muted text-body-md rounded-lg border border-border-subtle focus:border-accent-electric focus:ring-2 focus:ring-accent-electric/20 outline-none transition-all" placeholder="Search entity, CRN, or rule ID..." type="text" value="Harbourline Logistics Ltd"/>
+<kbd class="absolute right-2.5 top-2.5 text-[10px] bg-surface-overlay px-1.5 py-0.5 rounded text-text-secondary border border-border-subtle font-mono">⌘K</kbd>
+</div>
+</div>
+<!-- Navigation Links from JSON (Exact labels & matching active state) -->
+<nav class="hidden lg:flex items-center space-x-6">
+<a class="border-b-2 border-accent-electric text-accent-electric font-semibold pb-1 font-label-md text-label-md" href="#">Missing Documents Matrix</a>
+<a class="text-text-secondary hover:text-text-primary pb-1 transition-colors font-label-md text-label-md" href="#">AI Draft Chase Email</a>
+<a class="text-text-secondary hover:text-text-primary pb-1 transition-colors font-label-md text-label-md" href="#">RM Review &amp; Send</a>
+<a class="text-text-secondary hover:text-text-primary pb-1 transition-colors font-label-md text-label-md" href="#">Follow-Up Cadence</a>
+<a class="text-text-secondary hover:text-text-primary pb-1 transition-colors font-label-md text-label-md" href="#">Pilot Metrics</a>
+<a class="text-text-secondary hover:text-text-primary pb-1 transition-colors font-label-md text-label-md" href="#">Scope &amp; Guardrails</a>
+</nav>
+<!-- Trailing Actions & RM Profile Avatar -->
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-1 border-r border-border-subtle pr-space-md">
+<button class="w-9 h-9 flex items-center justify-center rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface-elevated/60 transition-colors" title="Notifications">
+<span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+</button>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface-elevated/60 transition-colors" title="Help Documentation">
+<span class="material-symbols-outlined text-[20px]" data-icon="help">help</span>
+</button>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg text-text-secondary hover:text-text-primary hover:bg-surface-elevated/60 transition-colors" title="Cadence Settings">
+<span class="material-symbols-outlined text-[20px]" data-icon="tune">tune</span>
+</button>
+</div>
+<div class="flex items-center gap-space-sm pl-1">
+<img class="w-9 h-9 rounded-full border border-accent-electric/40 object-cover ring-2 ring-accent-electric/20" data-alt="Close-up professional photographic portrait of RM Meera Shah, an institutional corporate banking relationship manager in London, wearing tailored business attire with subtle ambient architectural office reflections in soft cinematic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeVVV_blpuzhZQxtdHi9vGq9EdH6kD8RZ6779RkDNj_uKMM1JXIXYZcHuiK7X1qMGlxBTh1jH5BYXZZiDxQ5AhZoO0OlwOa3lnM9uJyVJKs5NxcvqWuC4H58ZxGv8GDSswYKHCpZ-U7L1il_iyPc0x3xof1MFm7rExfdkftpbaOqp-Su5GXrMp4TAmW7rH51hY5QY1LG72T0vtMavSu-TPnsBtwgJYUptdRnkT1hSl"/>
+<div class="text-left hidden xl:block">
+<p class="font-label-md text-label-md text-text-primary leading-tight font-semibold">Meera Shah</p>
+<p class="font-label-caps text-label-caps text-text-muted">Lead RM · UK Corporate</p>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- BODY WRAPPER: SideBar + Content Canvas -->
+<div class="flex max-w-[1440px] mx-auto min-h-[calc(100vh-64px)]">
+<!-- SIDEBAR NAVIGATION (from Shared Component JSON: desktop_sidebar) -->
+<aside class="fixed left-0 top-16 bottom-0 w-64 p-space-md flex flex-col justify-between z-40 bg-surface-elevated dark:bg-surface-elevated border-r border-border-subtle dark:border-border-subtle shadow-none">
+<!-- Upper Section -->
+<div class="space-y-space-md">
+<!-- Header badge -->
+<div class="flex items-center gap-space-sm px-2 py-1">
+<div class="w-8 h-8 rounded-lg bg-surface-overlay border border-border-subtle flex items-center justify-center text-accent-electric">
+<span class="material-symbols-outlined text-[18px]" data-icon="shield">shield</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-text-primary font-bold leading-tight text-sm">RM Operational Suite</h4>
+<p class="font-label-caps text-label-caps text-text-muted">Institutional Client Group</p>
+</div>
+</div>
+<hr class="border-border-subtle"/>
+<!-- Nav Tabs from JSON: Active index 0: Missing Matrix -->
+<nav class="space-y-1">
+<a class="bg-surface-overlay text-accent-electric border-r-2 border-accent-electric font-semibold px-space-md py-space-sm rounded-lg flex items-center gap-3 transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="table_chart">table_chart</span>
+<span class="font-label-md text-label-md">Missing Matrix</span>
+</a>
+<a class="text-text-secondary hover:text-text-primary hover:bg-surface-overlay/50 px-space-md py-space-sm rounded-lg transition-colors flex items-center gap-3" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-md text-label-md">AI Email Drafter</span>
+</a>
+<a class="text-text-secondary hover:text-text-primary hover:bg-surface-overlay/50 px-space-md py-space-sm rounded-lg transition-colors flex items-center gap-3" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="mark_email_read">mark_email_read</span>
+<span class="font-label-md text-label-md">Review &amp; Execute</span>
+</a>
+<a class="text-text-secondary hover:text-text-primary hover:bg-surface-overlay/50 px-space-md py-space-sm rounded-lg transition-colors flex items-center gap-3" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="schedule_send">schedule_send</span>
+<span class="font-label-md text-label-md">Cadence Rules</span>
+</a>
+<a class="text-text-secondary hover:text-text-primary hover:bg-surface-overlay/50 px-space-md py-space-sm rounded-lg transition-colors flex items-center gap-3" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="monitoring">monitoring</span>
+<span class="font-label-md text-label-md">Impact Telemetry</span>
+</a>
+<a class="text-text-secondary hover:text-text-primary hover:bg-surface-overlay/50 px-space-md py-space-sm rounded-lg transition-colors flex items-center gap-3" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="security">security</span>
+<span class="font-label-md text-label-md">Policy Guardrails</span>
+</a>
+</nav>
+<!-- Sidebar CTA trigger -->
+<div class="pt-2">
+<button class="w-full flex items-center justify-center gap-2 py-2 px-space-md rounded-lg bg-surface-overlay hover:bg-surface-overlay/80 border border-border-subtle text-accent-electric font-label-md text-label-md transition-all">
+<span class="material-symbols-outlined text-[16px]" data-icon="sync">sync</span>
+<span>Trigger Sync</span>
+</button>
+</div>
+</div>
+<!-- Lower Footer Tabs -->
+<div class="border-t border-border-subtle pt-space-sm space-y-1">
+<a class="text-text-secondary hover:text-text-primary hover:bg-surface-overlay/50 px-space-md py-space-sm rounded-lg transition-colors flex items-center gap-3" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="history">history</span>
+<span class="font-label-md text-label-md">Audit Trail</span>
+</a>
+<a class="text-text-secondary hover:text-text-primary hover:bg-surface-overlay/50 px-space-md py-space-sm rounded-lg transition-colors flex items-center gap-3" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="hub">hub</span>
+<span class="font-label-md text-label-md">API Gateway</span>
+</a>
+<div class="px-space-md pt-2 pb-1 text-[10px] text-text-muted flex justify-between items-center font-mono">
+<span>SECURED TLS 1.3</span>
+<span class="inline-block w-2 h-2 rounded-full bg-accent-electric animate-pulse"></span>
+</div>
+</div>
+</aside>
+<!-- MAIN WORKSPACE (Offset by 256px for docked sidebar) -->
+<main class="ml-64 flex-1 p-space-xl space-y-space-lg max-w-[calc(1440px-256px)]">
+<!-- Case Context Header Card -->
+<section class="bg-surface-elevated rounded-xl border border-border-subtle p-space-lg shadow-none">
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<div class="space-y-2">
+<div class="flex flex-wrap items-center gap-3">
+<span class="px-2.5 py-1 rounded bg-accent-violet/20 border border-accent-violet/30 text-secondary font-label-caps text-label-caps">UK Corporate</span>
+<span class="px-2.5 py-1 rounded bg-surface-overlay text-text-secondary border border-border-subtle font-mono text-label-caps">CRN 08492011</span>
+<span class="px-2.5 py-1 rounded bg-amber-500/10 border border-amber-500/30 text-tertiary-fixed font-label-caps text-label-caps">Day 0 of 62d SLA</span>
+<span class="px-2.5 py-1 rounded bg-accent-electric/10 border border-accent-electric/30 text-accent-electric font-label-caps text-label-caps">KYC Level 3 Institutional</span>
+</div>
+<div class="flex items-center gap-3">
+<h1 class="font-headline-lg text-headline-lg font-bold text-text-primary tracking-tight">Harbourline Logistics Ltd</h1>
+<span class="text-text-muted text-body-md font-normal">• 4 Related Parties Profiled</span>
+</div>
+<p class="text-text-secondary text-body-md max-w-3xl">
+              Periodic Tier-1 Corporate Refresh underway. Algorithmic intake ingested registry filings, Companies House extracts, and secure inbox drops. 5 actionable evidence gaps identified.
+            </p>
+</div>
+<!-- Secondary Header Action -->
+<div class="flex items-center gap-3 self-start xl:self-center">
+<button class="px-4 py-2.5 rounded-lg border border-border-prominent hover:border-text-primary text-text-primary hover:bg-surface-overlay font-label-lg text-label-lg flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="open_in_new">open_in_new</span>
+<span>Evaluate Full Case</span>
+</button>
+<button class="px-4 py-2.5 rounded-lg bg-surface-overlay hover:bg-surface-container-high border border-border-subtle text-text-secondary hover:text-text-primary font-label-lg text-label-lg flex items-center gap-2 transition-all">
+<span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+<span>Export Dossier</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Overview KPI Strip -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- KPI 1 -->
+<div class="bg-surface-elevated rounded-xl border border-border-subtle p-space-md flex items-center justify-between">
+<div class="space-y-1">
+<p class="font-label-caps text-label-caps text-text-muted uppercase">Document Gaps</p>
+<p class="font-headline-lg text-headline-lg font-bold text-accent-electric leading-none">5 Observable</p>
+<p class="text-text-secondary text-xs">Corp: 2 · UBO/Director: 3</p>
+</div>
+<div class="w-12 h-12 rounded-lg bg-surface-canvas border border-border-subtle flex items-center justify-center text-accent-electric">
+<span class="material-symbols-outlined text-[24px]" data-icon="rule_folder">rule_folder</span>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-surface-elevated rounded-xl border border-border-subtle p-space-md flex items-center justify-between">
+<div class="space-y-1">
+<p class="font-label-caps text-label-caps text-text-muted uppercase">Entities Analyzed</p>
+<p class="font-headline-lg text-headline-lg font-bold text-text-primary leading-none">4 Related Parties</p>
+<p class="text-text-secondary text-xs">Checked against PSC register</p>
+</div>
+<div class="w-12 h-12 rounded-lg bg-surface-canvas border border-border-subtle flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[24px]" data-icon="group">group</span>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-surface-elevated rounded-xl border border-border-subtle p-space-md flex items-center justify-between">
+<div class="space-y-1">
+<p class="font-label-caps text-label-caps text-text-muted uppercase">AI Extraction Accuracy</p>
+<p class="font-headline-lg text-headline-lg font-bold text-text-primary leading-none">0 False Flags</p>
+<p class="text-accent-electric text-xs">Deterministic OCR verification</p>
+</div>
+<div class="w-12 h-12 rounded-lg bg-surface-canvas border border-border-subtle flex items-center justify-center text-accent-electric">
+<span class="material-symbols-outlined text-[24px]" data-icon="verified">verified</span>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-surface-elevated rounded-xl border border-border-subtle p-space-md flex items-center justify-between">
+<div class="space-y-1">
+<p class="font-label-caps text-label-caps text-text-muted uppercase">Intake Velocity</p>
+<p class="font-headline-lg text-headline-lg font-bold text-accent-electric leading-none">100% Day-0 Recall</p>
+<p class="text-text-secondary text-xs">Triggered before RM workday</p>
+</div>
+<div class="w-12 h-12 rounded-lg bg-surface-canvas border border-border-subtle flex items-center justify-center text-accent-violet">
+<span class="material-symbols-outlined text-[24px]" data-icon="bolt">bolt</span>
+</div>
+</div>
+</section>
+<!-- RM Eyes Only Alert Banner -->
+<section class="bg-surface-container-low rounded-xl border-l-4 border-l-accent-violet border border-border-subtle p-space-md">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 rounded-lg bg-accent-violet/20 text-secondary flex items-center justify-center flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[22px]" data-icon="visibility">visibility</span>
+</div>
+<div class="space-y-1 flex-1">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-text-primary font-bold text-sm">RM Eyes Only: Possible Follow-on Detected</span>
+<span class="px-2 py-0.5 rounded bg-accent-violet/30 text-secondary font-label-caps text-[10px]">Rule CORP-01 Trigger</span>
+</div>
+<p class="text-text-secondary text-body-md leading-relaxed">
+              Missing shareholder register analysis indicates an unnotified allotment from Q2. Filing evidence suggests <strong class="text-text-primary font-semibold">Alicia Moreno</strong>'s voting share may have elevated from <span class="text-text-muted font-mono">19.8%</span> to <span class="text-accent-electric font-mono font-bold">27.4%</span> (surpassing the statutory &gt;=25% threshold). Receipt of doc <span class="font-mono text-xs text-text-primary bg-surface-overlay px-1 rounded">Corp-01</span> will automatically trigger secondary beneficial owner verification for Moreno.
+            </p>
+</div>
+<button class="px-3 py-1.5 rounded bg-surface-overlay text-text-secondary hover:text-text-primary border border-border-subtle font-label-md text-label-md whitespace-nowrap self-center transition-colors">
+            Rule Details
+          </button>
+</div>
+</section>
+<!-- COMPREHENSIVE DATA TABLE (Missing Documents Matrix) -->
+<section class="bg-surface-elevated rounded-xl border border-border-subtle overflow-hidden">
+<!-- Table Toolbar -->
+<div class="px-space-lg py-4 border-b border-border-subtle flex flex-col md:flex-row md:items-center justify-between gap-4 bg-surface-canvas/40">
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-text-primary flex items-center gap-2">
+<span>Missing Documents Matrix</span>
+<span class="text-xs px-2 py-0.5 rounded-full bg-accent-electric/15 text-accent-electric font-semibold font-mono">5 items</span>
+</h2>
+<p class="font-body-md text-body-md text-text-muted">Select or exclude missing items to be consolidated into the automated outreach.</p>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-text-muted font-label-md text-label-md">Bulk Actions:</span>
+<button class="px-3 py-1.5 rounded bg-surface-overlay hover:bg-surface-container-high border border-border-subtle text-text-primary font-label-md text-label-md transition-colors">
+              Include All
+            </button>
+<button class="px-3 py-1.5 rounded bg-surface-overlay hover:bg-surface-container-high border border-border-subtle text-text-secondary hover:text-text-primary font-label-md text-label-md transition-colors">
+              Reset Filters
+            </button>
+</div>
+</div>
+<!-- Table Element -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-border-subtle text-text-muted font-label-caps text-label-caps bg-surface-canvas/60">
+<th class="py-3.5 px-space-md w-12 text-center">Chase</th>
+<th class="py-3.5 px-space-md">Doc Code &amp; Subject</th>
+<th class="py-3.5 px-space-md">Required Document</th>
+<th class="py-3.5 px-space-md">Gap Status</th>
+<th class="py-3.5 px-space-md">Observed Evidence</th>
+<th class="py-3.5 px-space-md">Compliance Standard</th>
+<th class="py-3.5 px-space-md text-right">Exclude Toggle</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-subtle text-body-md">
+<!-- Item 1: Corp-01 -->
+<tr class="hover:bg-surface-overlay/40 transition-colors group">
+<td class="py-4 px-space-md text-center">
+<input checked="" class="w-4 h-4 rounded border-border-prominent text-accent-electric focus:ring-accent-electric bg-surface-canvas cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-space-md">
+<div class="font-mono text-xs font-semibold text-accent-electric">Corp-01</div>
+<div class="font-semibold text-text-primary">Harbourline Logistics Ltd</div>
+<div class="text-xs text-text-muted font-mono">Entity Level</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="font-semibold text-text-primary">Current Shareholder Register</div>
+<div class="text-xs text-text-secondary">Certified cap table or register copy</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-label-caps font-label-caps bg-error-container/40 text-error border border-error/30 font-bold">
+                    MISSING
+                  </span>
+</td>
+<td class="py-4 px-space-md text-text-secondary">
+<span class="text-error font-medium">None received</span>
+<div class="text-xs text-text-muted">Zero matching records in client portal</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="font-mono text-xs text-secondary font-semibold">CORP-01</div>
+<div class="text-xs text-text-secondary">Verify all &gt;=25% beneficial owners</div>
+</td>
+<td class="py-4 px-space-md text-right">
+<button class="text-xs text-text-muted hover:text-text-primary px-2.5 py-1 rounded bg-surface-canvas border border-border-subtle hover:border-border-prominent transition-all">
+                    Exclude
+                  </button>
+</td>
+</tr>
+<!-- Item 2: Corp-03 -->
+<tr class="hover:bg-surface-overlay/40 transition-colors group">
+<td class="py-4 px-space-md text-center">
+<input checked="" class="w-4 h-4 rounded border-border-prominent text-accent-electric focus:ring-accent-electric bg-surface-canvas cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-space-md">
+<div class="font-mono text-xs font-semibold text-accent-electric">Corp-03</div>
+<div class="font-semibold text-text-primary">Harbourline Logistics Ltd</div>
+<div class="text-xs text-text-muted font-mono">Entity Level</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="font-semibold text-text-primary">Operating Bank Statement</div>
+<div class="text-xs text-text-secondary">Primary treasury clearing account</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-label-caps font-label-caps bg-amber-500/20 text-tertiary-fixed border border-amber-500/40 font-bold">
+                    INCOMPLETE
+                  </span>
+</td>
+<td class="py-4 px-space-md text-text-secondary">
+<span class="text-text-primary font-medium">Pages 1-2 received</span>
+<div class="text-xs text-amber-400">Missing statement pages 3 &amp; 4</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="font-mono text-xs text-secondary font-semibold">CORP-03</div>
+<div class="text-xs text-text-secondary">Continuous 90d operating audit trace</div>
+</td>
+<td class="py-4 px-space-md text-right">
+<button class="text-xs text-text-muted hover:text-text-primary px-2.5 py-1 rounded bg-surface-canvas border border-border-subtle hover:border-border-prominent transition-all">
+                    Exclude
+                  </button>
+</td>
+</tr>
+<!-- Item 3: ID-01 -->
+<tr class="hover:bg-surface-overlay/40 transition-colors group">
+<td class="py-4 px-space-md text-center">
+<input checked="" class="w-4 h-4 rounded border-border-prominent text-accent-electric focus:ring-accent-electric bg-surface-canvas cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-space-md">
+<div class="font-mono text-xs font-semibold text-secondary">ID-01</div>
+<div class="font-semibold text-text-primary">Daniel Whitaker</div>
+<div class="text-xs text-text-muted">Director (40% Shareholder)</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="font-semibold text-text-primary">Valid Photo ID</div>
+<div class="text-xs text-text-secondary">Passport or National ID Card</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-label-caps font-label-caps bg-red-950/60 text-error border border-error/40 font-bold">
+                    EXPIRED
+                  </span>
+</td>
+<td class="py-4 px-space-md text-text-secondary">
+<span class="text-error font-medium">Passport expired 14 Sep 2026</span>
+<div class="text-xs text-text-muted">On-file doc UK-P928189</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="font-mono text-xs text-secondary font-semibold">ID-01</div>
+<div class="text-xs text-text-secondary">Unexpired government photo document</div>
+</td>
+<td class="py-4 px-space-md text-right">
+<button class="text-xs text-text-muted hover:text-text-primary px-2.5 py-1 rounded bg-surface-canvas border border-border-subtle hover:border-border-prominent transition-all">
+                    Exclude
+                  </button>
+</td>
+</tr>
+<!-- Item 4: POA-02 -->
+<tr class="hover:bg-surface-overlay/40 transition-colors group">
+<td class="py-4 px-space-md text-center">
+<input checked="" class="w-4 h-4 rounded border-border-prominent text-accent-electric focus:ring-accent-electric bg-surface-canvas cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-space-md">
+<div class="font-mono text-xs font-semibold text-secondary">POA-02</div>
+<div class="font-semibold text-text-primary">Daniel Whitaker</div>
+<div class="text-xs text-text-muted">Director (40% Shareholder)</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="font-semibold text-text-primary">Proof of Address (POA)</div>
+<div class="text-xs text-text-secondary">Utility invoice or Council Tax</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-label-caps font-label-caps bg-amber-900/40 text-tertiary-fixed border border-amber-500/30 font-bold">
+                    STALE
+                  </span>
+</td>
+<td class="py-4 px-space-md text-text-secondary">
+<span class="text-tertiary-fixed font-medium">Utility dated 30 Jun 2026</span>
+<div class="text-xs text-text-muted">&gt;3 months old (&gt;90 day window)</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="font-mono text-xs text-secondary font-semibold">POA-02</div>
+<div class="text-xs text-text-secondary">Standard validity &lt;= 90 calendar days</div>
+</td>
+<td class="py-4 px-space-md text-right">
+<button class="text-xs text-text-muted hover:text-text-primary px-2.5 py-1 rounded bg-surface-canvas border border-border-subtle hover:border-border-prominent transition-all">
+                    Exclude
+                  </button>
+</td>
+</tr>
+<!-- Item 5: ID-02 & POA-01 -->
+<tr class="hover:bg-surface-overlay/40 transition-colors group">
+<td class="py-4 px-space-md text-center">
+<input checked="" class="w-4 h-4 rounded border-border-prominent text-accent-electric focus:ring-accent-electric bg-surface-canvas cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-space-md">
+<div class="font-mono text-xs font-semibold text-secondary">ID-02 &amp; POA-01</div>
+<div class="font-semibold text-text-primary">Alicia Moreno</div>
+<div class="text-xs text-accent-violet font-semibold">Director (30% Potential UBO)</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="font-semibold text-text-primary">Photo ID &amp; Proof of Address</div>
+<div class="text-xs text-text-secondary">Dual natural-person onboarding package</div>
+</td>
+<td class="py-4 px-space-md">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded text-label-caps font-label-caps bg-error-container/40 text-error border border-error/30 font-bold">
+                    MISSING
+                  </span>
+</td>
+<td class="py-4 px-space-md text-text-secondary">
+<span class="text-error font-medium">No submission recorded</span>
+<div class="text-xs text-text-muted">Awaiting initial document intake</div>
+</td>
+<td class="py-4 px-space-md">
+<div class="font-mono text-xs text-secondary font-semibold">ID-01 / POA-02</div>
+<div class="text-xs text-text-secondary">Full identity verification package</div>
+</td>
+<td class="py-4 px-space-md text-right">
+<button class="text-xs text-text-muted hover:text-text-primary px-2.5 py-1 rounded bg-surface-canvas border border-border-subtle hover:border-border-prominent transition-all">
+                    Exclude
+                  </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer / Summary Bar -->
+<div class="p-space-md bg-surface-canvas/60 border-t border-border-subtle flex flex-col sm:flex-row items-center justify-between text-xs text-text-muted gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-accent-electric" data-icon="check_circle">check_circle</span>
+<span>All 5 items ready to be bundled into single unified outreach payload.</span>
+</div>
+<div class="font-mono">
+            COMPLIANCE CADENCE: PROTOCOL-UK-CORP-T1
+          </div>
+</div>
+</section>
+<!-- Bottom Bar Primary Action Card -->
+<section class="bg-surface-elevated border border-accent-electric/30 rounded-xl p-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md relative overflow-hidden">
+<!-- Glow highlight effect -->
+<div class="absolute -right-20 -bottom-20 w-64 h-64 bg-accent-electric/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="space-y-1 relative z-10">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-accent-electric animate-ping"></span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-text-primary text-lg">Next Stage: AI Email Drafting</h3>
+</div>
+<p class="text-text-secondary text-body-md">
+            AI will consolidate into 1 polite corporate email for Harbourline RM sign-off.
+          </p>
+<div class="flex items-center gap-4 text-xs text-text-muted pt-1">
+<span class="flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-[14px] text-accent-electric" data-icon="lock">lock</span>
+              Zero-PII Storage
+            </span>
+<span class="flex items-center gap-1 font-mono">
+<span class="material-symbols-outlined text-[14px] text-secondary" data-icon="tune">tune</span>
+              Tone: Executive Formal
+            </span>
+</div>
+</div>
+<div class="flex items-center gap-3 relative z-10 w-full md:w-auto">
+<button class="w-full md:w-auto px-6 py-3.5 rounded-lg bg-accent-electric text-surface-canvas font-bold font-label-lg text-label-lg hover:brightness-110 shadow-[0_0_20px_rgba(2,245,118,0.35)] transition-all flex items-center justify-center gap-2 whitespace-nowrap active:scale-95">
+<span class="material-symbols-outlined text-[20px]" data-icon="auto_awesome">auto_awesome</span>
+<span>Generate Single Chase Draft (5 Gaps)</span>
+</button>
+</div>
+</section>
+</main>
+</div>
+</body></html>

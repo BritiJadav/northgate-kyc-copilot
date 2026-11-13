@@ -1,0 +1,147 @@
+{
+  "timestamp": "2026-11-13T01:54:04Z",
+  "duration_seconds": 0.008,
+  "overall_status": "PASS",
+  "summary": {
+    "module_a_gap_f1": 1.0,
+    "module_a_guardrail_accuracy": 1.0,
+    "module_b_companies_passed": 5,
+    "module_b_companies_total": 5,
+    "kestrel_failure_modes_passed": 3,
+    "citation_verifier_accuracy": 1.0
+  },
+  "module_a": {
+    "module": "MODULE_A_DOCUMENT_CHASER",
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "cases_evaluated": 3,
+    "case_breakdown": [
+      {
+        "case_number": "CASE-2026-001",
+        "client_name": "Priya Raman",
+        "expected_count": 3,
+        "detected_count": 3,
+        "true_positives": 3,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "status": "PASS"
+      },
+      {
+        "case_number": "CASE-2026-002",
+        "client_name": "Harbourline Logistics Ltd",
+        "expected_count": 6,
+        "detected_count": 6,
+        "true_positives": 6,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "status": "PASS"
+      },
+      {
+        "case_number": "CASE-2026-003",
+        "client_name": "Okafor Family Trust",
+        "expected_count": 3,
+        "detected_count": 3,
+        "true_positives": 3,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "status": "PASS"
+      }
+    ],
+    "guardrail_accuracy": 1.0,
+    "guardrail_tests_count": 5,
+    "status": "PASS"
+  },
+  "module_b": {
+    "module": "MODULE_B_ANALYST_ASSIST",
+    "companies_evaluated": 5,
+    "company_breakdown": [
+      {
+        "company": "Alder & Finch Ltd",
+        "type": "Single-tier clean register",
+        "metrics": {
+          "nadia_finch_pct": 60.0,
+          "owen_alder_pct": 40.0
+        },
+        "status": "PASS"
+      },
+      {
+        "company": "Brightwave Software Ltd",
+        "type": "Dual-class voting disparity",
+        "metrics": {
+          "lumen_growth_vote_pct": 83.33,
+          "expected": 83.33
+        },
+        "status": "PASS"
+      },
+      {
+        "company": "Calder Marine Services Ltd",
+        "type": "Stale register + transfer sheet update",
+        "metrics": {
+          "maya_iyer_pct": 55.0,
+          "lars_pedersen_pct": 45.0
+        },
+        "status": "PASS"
+      },
+      {
+        "company": "Rowan Bay Consulting Ltd",
+        "type": "Missing register & formation subscribers",
+        "metrics": {
+          "current_ownership": "NOT_FOUND",
+          "unresolved_pct": 100.0
+        },
+        "status": "PASS"
+      },
+      {
+        "company": "Kestrel Trading Ltd",
+        "type": "4-tier chain with candidate matches & control flags",
+        "kestrel_failure_modes": {
+          "failure_mode_1_berg_split_handled": {
+            "name": "No Auto-Merge of Tomas/Thomas Berg without confirmation (C8)",
+            "passed": true,
+            "details": "Before resolution: Tomas 19.2%, Thomas 14.4%. After confirmation: 33.6% UBO."
+          },
+          "failure_mode_2_nominee_flag_preserved": {
+            "name": "Meridian Nominees Ltd flagged as nominee (not silently dropped)",
+            "passed": true,
+            "details": "Meridian Nominees 10% flagged with nominee requirement and unmasked owner gap."
+          },
+          "failure_mode_3_trustee_not_ubo": {
+            "name": "Wren Fiduciary Ltd flagged as trustee without beneficiaries (never UBO)",
+            "passed": true,
+            "details": "Wren Fiduciary correctly classified as institutional fiduciary holding."
+          }
+        },
+        "status": "PASS"
+      }
+    ],
+    "kestrel_failure_modes": {
+      "failure_mode_1_berg_split_handled": {
+        "name": "No Auto-Merge of Tomas/Thomas Berg without confirmation (C8)",
+        "passed": true,
+        "details": "Before resolution: Tomas 19.2%, Thomas 14.4%. After confirmation: 33.6% UBO."
+      },
+      "failure_mode_2_nominee_flag_preserved": {
+        "name": "Meridian Nominees Ltd flagged as nominee (not silently dropped)",
+        "passed": true,
+        "details": "Meridian Nominees 10% flagged with nominee requirement and unmasked owner gap."
+      },
+      "failure_mode_3_trustee_not_ubo": {
+        "name": "Wren Fiduciary Ltd flagged as trustee without beneficiaries (never UBO)",
+        "passed": true,
+        "details": "Wren Fiduciary correctly classified as institutional fiduciary holding."
+      }
+    },
+    "citation_verification_accuracy": 1.0,
+    "status": "PASS"
+  }
+}

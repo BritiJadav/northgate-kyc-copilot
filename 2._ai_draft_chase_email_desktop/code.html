@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Northgate Bank Document Chaser Copilot - AI Draft Chase Email</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#32353c",
+            "tertiary-container": "#ffcd80",
+            "error-container": "#93000a",
+            "primary-fixed": "#65ff90",
+            "surface-container-high": "#272a31",
+            "tertiary-fixed-dim": "#efbf73",
+            "surface-tint": "#00e46d",
+            "primary-fixed-dim": "#00e46d",
+            "on-primary-fixed": "#00210a",
+            "text-primary": "#FFFFFF",
+            "border-subtle": "rgba(255, 255, 255, 0.08)",
+            "secondary-fixed": "#e6deff",
+            "tertiary-fixed": "#ffddae",
+            "background": "#10131a",
+            "text-muted": "#64748B",
+            "surface-container": "#1d2026",
+            "inverse-on-surface": "#2e3037",
+            "surface-variant": "#32353c",
+            "on-secondary": "#30009b",
+            "outline-variant": "#3b4b3c",
+            "surface": "#10131a",
+            "surface-dim": "#10131a",
+            "secondary-container": "#4f00f1",
+            "on-surface-variant": "#bacbb8",
+            "on-tertiary": "#432c00",
+            "inverse-primary": "#006d31",
+            "error": "#ffb4ab",
+            "border-prominent": "rgba(255, 255, 255, 0.16)",
+            "surface-container-lowest": "#0b0e14",
+            "on-primary-container": "#006b2f",
+            "on-surface": "#e1e2eb",
+            "on-background": "#e1e2eb",
+            "secondary-fixed-dim": "#c9beff",
+            "surface-container-low": "#191c22",
+            "on-error": "#690005",
+            "on-primary-fixed-variant": "#005323",
+            "surface-canvas": "#0B0E14",
+            "surface-bright": "#363940",
+            "outline": "#849584",
+            "accent-electric": "#02F576",
+            "on-tertiary-container": "#795513",
+            "surface-elevated": "#141824",
+            "inverse-surface": "#e1e2eb",
+            "text-secondary": "#9CA3AF",
+            "accent-violet": "#5F2CFF",
+            "on-secondary-container": "#c5baff",
+            "on-secondary-fixed-variant": "#4600d8",
+            "on-tertiary-fixed-variant": "#604100",
+            "tertiary": "#ffefdc",
+            "on-secondary-fixed": "#1b0062",
+            "surface-overlay": "#1E2435",
+            "on-primary": "#003916",
+            "primary-container": "#02f576",
+            "primary": "#c9ffcd",
+            "secondary": "#c9beff",
+            "on-tertiary-fixed": "#281800",
+            "on-error-container": "#ffdad6"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.25rem",
+            "margin": "2rem",
+            "gutter-mobile": "1rem",
+            "margin-mobile": "1rem",
+            "gutter": "1.5rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "label-md": ["Montserrat"],
+            "headline-sm": ["Montserrat"],
+            "label-caps": ["Montserrat"],
+            "label-lg": ["Montserrat"],
+            "body-md": ["Montserrat"],
+            "body-lg": ["Montserrat"],
+            "display-hero": ["Montserrat"],
+            "body-xl": ["Montserrat"],
+            "headline-lg": ["Montserrat"],
+            "display-hero-mobile": ["Montserrat"],
+            "headline-md": ["Montserrat"],
+            "headline-xl": ["Montserrat"],
+            "headline-xl-mobile": ["Montserrat"]
+          },
+          "fontSize": {
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "label-caps": ["11px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "display-hero": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "body-xl": ["18px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "800" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-xl": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 20;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #0B0E14;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #1E2435;
+      border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: rgba(2, 245, 118, 0.4);
+    }
+  </style>
+</head>
+<body class="bg-surface-canvas text-text-primary antialiased min-h-screen flex flex-col font-body-md text-body-md overflow-x-hidden selection:bg-accent-electric selection:text-surface-canvas">
+<!-- TOP APP BAR (from Shared Component JSON: TopNavBar) -->
+<header class="bg-surface-canvas/80 backdrop-blur-md dark:bg-surface-canvas/80 docked full-width top-0 sticky z-50 border-b border-border-subtle dark:border-border-subtle shadow-none">
+<div class="w-full px-space-xl flex items-center justify-between h-16 max-w-[1440px] mx-auto">
+<!-- Left: Brand Logo and Search -->
+<div class="flex items-center space-x-6">
+<div class="flex items-center space-x-3">
+<div class="w-9 h-9 rounded-lg bg-surface-elevated border border-border-prominent flex items-center justify-center text-accent-electric shadow-[0_0_12px_rgba(2,245,118,0.25)]">
+<span class="material-symbols-outlined text-xl" data-icon="shield_lock">shield_lock</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md font-bold text-text-primary dark:text-text-primary tracking-tight">Northgate Bank</span>
+<span class="font-label-caps text-label-caps text-text-secondary tracking-widest -mt-1">DOCUMENT CHASER COPILOT</span>
+</div>
+</div>
+<!-- Global Search Input (search_bar: "on_left") -->
+<div class="relative w-64 hidden xl:block">
+<span class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-text-muted">
+<span class="material-symbols-outlined text-base" data-icon="search">search</span>
+</span>
+<input class="w-full h-9 pl-9 pr-3 bg-surface-elevated border border-border-subtle rounded-lg text-body-md text-text-primary placeholder-text-muted focus:outline-none focus:border-accent-electric focus:ring-1 focus:ring-accent-electric transition-colors" placeholder="Search case, entity, UTR..." type="text"/>
+</div>
+</div>
+<!-- Center: Navigation Links (Mapped with exact Active item 'AI Draft Chase Email') -->
+<nav class="hidden lg:flex items-center space-x-6 font-label-md text-label-md pt-1">
+<a class="text-text-secondary hover:text-text-primary pb-1 transition-colors" href="#">Missing Documents Matrix</a>
+<a class="border-b-2 border-accent-electric text-accent-electric font-semibold pb-1" href="#">AI Draft Chase Email</a>
+<a class="text-text-secondary hover:text-text-primary pb-1 transition-colors" href="#">RM Review &amp; Send</a>
+<a class="text-text-secondary hover:text-text-primary pb-1 transition-colors" href="#">Follow-Up Cadence</a>
+<a class="text-text-secondary hover:text-text-primary pb-1 transition-colors" href="#">Pilot Metrics</a>
+<a class="text-text-secondary hover:text-text-primary pb-1 transition-colors" href="#">Scope &amp; Guardrails</a>
+</nav>
+<!-- Right: Trailing Actions and Avatar -->
+<div class="flex items-center space-x-3">
+<div class="flex items-center space-x-1 border-r border-border-subtle pr-3">
+<button class="w-8 h-8 rounded flex items-center justify-center text-text-secondary hover:text-text-primary hover:bg-surface-elevated/60 transition-colors" title="Notifications">
+<span class="material-symbols-outlined text-lg" data-icon="notifications">notifications</span>
+</button>
+<button class="w-8 h-8 rounded flex items-center justify-center text-text-secondary hover:text-text-primary hover:bg-surface-elevated/60 transition-colors" title="Help &amp; Reference">
+<span class="material-symbols-outlined text-lg" data-icon="help">help</span>
+</button>
+<button class="w-8 h-8 rounded flex items-center justify-center text-text-secondary hover:text-text-primary hover:bg-surface-elevated/60 transition-colors" title="Cadence Settings">
+<span class="material-symbols-outlined text-lg" data-icon="tune">tune</span>
+</button>
+</div>
+<button class="hidden sm:inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg border border-border-prominent text-text-primary font-label-md text-label-md hover:bg-surface-elevated/60 transition-colors">
+<span>Cadence Settings</span>
+</button>
+<button class="bg-accent-electric text-surface-canvas font-bold font-label-md text-label-md px-3.5 py-1.5 rounded-lg flex items-center space-x-1.5 shadow-[0_0_16px_rgba(2,245,118,0.3)] hover:brightness-105 transition-all">
+<span class="material-symbols-outlined text-base" data-icon="bolt">bolt</span>
+<span>Send Chase Batch</span>
+</button>
+<!-- RM Profile Badge -->
+<div class="flex items-center pl-2">
+<img alt="Relationship Manager portrait avatar" class="w-8 h-8 rounded-full border border-accent-electric/40 object-cover" data-alt="A refined corporate headshot portrait of Relationship Manager Meera Shah in modern dark navy business attire against a sleek institutional backdrop, high key studio lighting, professional and composed atmosphere matching enterprise digital banking standard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZjiXE1UgelFbYCULxLS2l5lwS2qXBJ_57YjGDFz8pChMd97mvEOXu9H1zPkcm-zK_JnPqs7p75vYOnQ3O3E1-Wdwe4gfZPnHZKfzIjSmHLDqxUpHl9Rkcm1rZh2oVBpBm43VmK9mbQFGLXDvpyE4VVWslBaV5RXUG2pBAAGkFlavN-WCsX5ZgizaxdVFGjotKU_ukIZtLMLgjiVwQrnXLw8usiE43T4GcrPgG88Hn"/>
+</div>
+</div>
+</div>
+</header>
+<!-- WORKSPACE CONTAINER WITH LEFT SIDEBAR (max-w-[1440px]) -->
+<div class="flex-1 w-full max-w-[1440px] mx-auto flex relative">
+<!-- LEFT SIDEBAR NAVIGATION (from Shared Component JSON: SideNavBar) -->
+<aside class="fixed left-0 top-16 bottom-0 w-64 p-space-md flex flex-col justify-between z-40 bg-surface-elevated dark:bg-surface-elevated border-r border-border-subtle dark:border-border-subtle shadow-none">
+<div class="flex flex-col space-y-6">
+<!-- Sidebar Header with Badge -->
+<div class="flex items-center space-x-3 pb-3 border-b border-border-subtle">
+<div class="w-9 h-9 rounded-lg bg-surface-overlay border border-border-subtle flex items-center justify-center text-accent-electric">
+<span class="material-symbols-outlined" data-icon="verified_user">verified_user</span>
+</div>
+<div class="flex flex-col overflow-hidden">
+<span class="font-headline-sm text-headline-sm font-bold text-text-primary truncate">RM Operational Suite</span>
+<span class="font-label-caps text-label-caps text-text-secondary truncate">Institutional Client Group</span>
+</div>
+</div>
+<!-- Primary Navigation Tabs (Active: AI Email Drafter) -->
+<nav class="flex flex-col space-y-1">
+<!-- Missing Matrix -->
+<a class="text-text-secondary hover:text-text-primary hover:bg-surface-overlay/50 px-space-md py-space-sm rounded-lg transition-colors flex items-center space-x-3 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="table_chart">table_chart</span>
+<span>Missing Matrix</span>
+</a>
+<!-- AI Email Drafter (ACTIVE TAB as defined in JSON) -->
+<a class="bg-surface-overlay text-accent-electric border-r-2 border-accent-electric font-semibold px-space-md py-space-sm rounded-lg flex items-center justify-between" href="#">
+<div class="flex items-center space-x-3 font-label-md text-label-md">
+<span class="material-symbols-outlined text-xl text-accent-electric" data-icon="auto_awesome">auto_awesome</span>
+<span>AI Email Drafter</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-accent-electric animate-pulse"></span>
+</a>
+<!-- Review & Execute -->
+<a class="text-text-secondary hover:text-text-primary hover:bg-surface-overlay/50 px-space-md py-space-sm rounded-lg transition-colors flex items-center space-x-3 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="mark_email_read">mark_email_read</span>
+<span>Review &amp; Execute</span>
+</a>
+<!-- Cadence Rules -->
+<a class="text-text-secondary hover:text-text-primary hover:bg-surface-overlay/50 px-space-md py-space-sm rounded-lg transition-colors flex items-center space-x-3 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="schedule_send">schedule_send</span>
+<span>Cadence Rules</span>
+</a>
+<!-- Impact Telemetry -->
+<a class="text-text-secondary hover:text-text-primary hover:bg-surface-overlay/50 px-space-md py-space-sm rounded-lg transition-colors flex items-center space-x-3 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="monitoring">monitoring</span>
+<span>Impact Telemetry</span>
+</a>
+<!-- Policy Guardrails -->
+<a class="text-text-secondary hover:text-text-primary hover:bg-surface-overlay/50 px-space-md py-space-sm rounded-lg transition-colors flex items-center space-x-3 font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="security">security</span>
+<span>Policy Guardrails</span>
+</a>
+</nav>
+</div>
+<!-- Sidebar Lower Section: Trigger Sync CTA & Footer Tabs -->
+<div class="flex flex-col space-y-4 pt-4 border-t border-border-subtle">
+<button class="w-full py-2.5 px-3 rounded-lg bg-surface-overlay hover:bg-surface-overlay/80 border border-border-prominent text-text-primary font-label-md text-label-md flex items-center justify-center space-x-2 transition-all">
+<span class="material-symbols-outlined text-accent-electric text-lg animate-spin" data-icon="sync" style="animation-duration: 4s;">sync</span>
+<span>Trigger Sync</span>
+</button>
+<!-- Footer Tab Labels -->
+<div class="flex flex-col space-y-1">
+<a class="text-text-secondary hover:text-text-primary hover:bg-surface-overlay/50 px-space-md py-1.5 rounded-lg transition-colors flex items-center space-x-3 font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="history">history</span>
+<span>Audit Trail</span>
+</a>
+<a class="text-text-secondary hover:text-text-primary hover:bg-surface-overlay/50 px-space-md py-1.5 rounded-lg transition-colors flex items-center space-x-3 font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="hub">hub</span>
+<span>API Gateway</span>
+</a>
+</div>
+<!-- Telemetry Status Indicator -->
+<div class="px-space-md py-2 rounded-lg bg-surface-canvas border border-border-subtle flex items-center justify-between text-label-caps font-label-caps">
+<span class="text-text-muted">CORE-LLM v4.2</span>
+<span class="flex items-center text-accent-electric"><span class="w-1.5 h-1.5 rounded-full bg-accent-electric mr-1.5"></span> 99.8ms</span>
+</div>
+</div>
+</aside>
+<!-- MAIN WORKSPACE (Offset by sidebar width: 16rem = 256px) -->
+<main class="ml-64 flex-1 p-space-lg flex flex-col space-y-space-md max-w-[calc(1440px-16rem)]">
+<!-- 1. CASE HEADER BAR -->
+<section class="bg-surface-elevated border border-border-subtle rounded-xl p-space-md flex flex-wrap items-center justify-between gap-4 shadow-sm">
+<div class="flex items-center space-x-4">
+<div class="w-12 h-12 rounded-lg bg-surface-overlay border border-border-prominent flex items-center justify-center text-accent-violet">
+<span class="material-symbols-outlined text-2xl" data-icon="domain">domain</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center space-x-3">
+<h1 class="font-headline-sm text-headline-sm font-bold text-text-primary tracking-tight">Harbourline Logistics Ltd</h1>
+<span class="px-2 py-0.5 rounded text-label-caps font-label-caps bg-accent-violet/20 text-[#c9beff] border border-accent-violet/30">Tier-1 Onboarding</span>
+<span class="px-2 py-0.5 rounded text-label-caps font-label-caps bg-yellow-500/10 text-yellow-300 border border-yellow-500/20 font-semibold tracking-wider">AI DRAFT SYNTHESIS (UNSENT)</span>
+</div>
+<div class="flex items-center space-x-4 text-text-secondary font-label-md text-label-md mt-1">
+<span class="flex items-center"><span class="text-text-muted mr-1">Case ID:</span> <strong class="text-text-primary font-mono">HL-2026-8941</strong></span>
+<span class="text-border-subtle">•</span>
+<span class="flex items-center"><span class="text-text-muted mr-1">Assigned RM:</span> <strong class="text-text-primary">Meera Shah</strong> (Institutional Logistics)</span>
+<span class="text-border-subtle">•</span>
+<span class="flex items-center text-accent-electric"><span class="material-symbols-outlined text-base mr-1" data-icon="bolt">bolt</span> Automated Synthesis Complete (2 mins ago)</span>
+</div>
+</div>
+</div>
+<div class="flex items-center space-x-2">
+<button class="px-3 py-1.5 rounded-lg border border-border-subtle hover:border-border-prominent bg-surface-canvas text-text-secondary hover:text-text-primary font-label-md text-label-md flex items-center space-x-1.5 transition-colors">
+<span class="material-symbols-outlined text-base" data-icon="history">history</span>
+<span>Chaser History (2)</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg border border-border-subtle hover:border-border-prominent bg-surface-canvas text-text-secondary hover:text-text-primary font-label-md text-label-md flex items-center space-x-1.5 transition-colors">
+<span class="material-symbols-outlined text-base" data-icon="contact_page">contact_page</span>
+<span>View Case 360</span>
+</button>
+</div>
+</section>
+<!-- 2. AI POLICY CHECKS BAR (4/4 Passed) -->
+<section class="bg-surface-elevated border border-border-subtle rounded-xl px-space-md py-3 flex flex-wrap items-center justify-between gap-3">
+<div class="flex items-center space-x-3">
+<div class="flex items-center space-x-1.5 px-2.5 py-1 rounded bg-accent-electric/15 border border-accent-electric/30 text-accent-electric font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-sm font-bold" data-icon="verified">verified</span>
+<span>AI POLICY CHECKS: 4/4 PASSED</span>
+</div>
+<span class="text-text-muted font-label-md text-label-md hidden md:inline">Regulatory communication compliance automatically audited:</span>
+</div>
+<div class="flex flex-wrap items-center gap-2">
+<div class="flex items-center space-x-1.5 px-2.5 py-1 rounded bg-surface-overlay border border-border-subtle text-text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-accent-electric text-base" data-icon="check_circle">check_circle</span>
+<span>1 Request Rule Enforced</span>
+</div>
+<div class="flex items-center space-x-1.5 px-2.5 py-1 rounded bg-surface-overlay border border-border-subtle text-text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-accent-electric text-base" data-icon="check_circle">check_circle</span>
+<span>No Jargon</span>
+</div>
+<div class="flex items-center space-x-1.5 px-2.5 py-1 rounded bg-surface-overlay border border-border-subtle text-text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-accent-electric text-base" data-icon="check_circle">check_circle</span>
+<span>Warm Professional</span>
+</div>
+<div class="flex items-center space-x-1.5 px-2.5 py-1 rounded bg-surface-overlay border border-border-subtle text-text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-accent-electric text-base" data-icon="check_circle">check_circle</span>
+<span>Factual Only</span>
+</div>
+<div class="flex items-center space-x-1.5 px-2.5 py-1 rounded bg-surface-overlay border border-border-subtle text-text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-accent-electric text-base" data-icon="shield">shield</span>
+<span>No Threats</span>
+</div>
+</div>
+</section>
+<!-- 3. PROMINENT WARNING BANNER (Action Required Before Sending) -->
+<section class="bg-gradient-to-r from-amber-950/40 via-surface-elevated to-surface-elevated border-l-4 border-l-amber-400 border border-amber-500/30 rounded-xl p-space-md shadow-lg flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all" id="warningBanner">
+<div class="flex items-start space-x-3.5">
+<div class="w-10 h-10 rounded-lg bg-amber-400/20 text-amber-300 flex items-center justify-center shrink-0 border border-amber-400/40">
+<span class="material-symbols-outlined text-2xl" data-icon="warning">warning</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center space-x-2">
+<span class="font-headline-sm text-headline-sm font-bold text-amber-300">Action Required Before Sending</span>
+<span class="px-2 py-0.5 rounded text-label-caps font-label-caps bg-amber-400/20 text-amber-200 border border-amber-400/30 font-semibold">1 Unresolved Token</span>
+</div>
+<p class="text-text-secondary font-body-md text-body-md mt-0.5">
+              The draft contains an unconfirmed token: <code class="bg-surface-canvas text-amber-300 px-1.5 py-0.5 rounded font-mono text-xs border border-amber-400/30">[RM TO CONFIRM: upload link]</code>. Northgate Security Mandate prohibits outgoing messages with mock or missing vault tokens.
+            </p>
+</div>
+</div>
+<!-- Token Autofill & Resolution Input Group -->
+<div class="flex items-center flex-wrap sm:flex-nowrap gap-2 shrink-0 bg-surface-canvas/90 p-1.5 rounded-lg border border-border-prominent">
+<div class="relative flex-1 sm:w-80">
+<span class="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none text-text-muted">
+<span class="material-symbols-outlined text-base" data-icon="link">link</span>
+</span>
+<input class="w-full h-9 pl-8 pr-2.5 bg-surface-elevated border border-border-subtle rounded text-body-md text-text-primary text-xs font-mono focus:outline-none focus:border-accent-electric transition-colors" id="vaultLinkInput" type="text" value="https://vault.northgatebank.co.uk/u/hl-8941-auth-req"/>
+</div>
+<button class="px-2.5 py-1.5 rounded bg-surface-overlay hover:bg-surface-overlay/80 text-text-primary border border-border-subtle font-label-md text-label-md flex items-center space-x-1 whitespace-nowrap transition-colors" id="btnAutofill" onclick="autofillLink()" title="Generate secure client-specific dropzone link">
+<span class="material-symbols-outlined text-sm text-accent-electric" data-icon="magic_button">magic_button</span>
+<span>Autofill Northgate Vault Link</span>
+</button>
+<button class="px-3.5 py-1.5 rounded bg-accent-electric text-surface-canvas font-bold font-label-md text-label-md flex items-center space-x-1 whitespace-nowrap hover:brightness-105 shadow-[0_0_12px_rgba(2,245,118,0.25)] transition-all" id="btnResolve" onclick="resolveToken()">
+<span class="material-symbols-outlined text-base" data-icon="check">check</span>
+<span>Resolve</span>
+</button>
+</div>
+</section>
+<!-- 4. TWO-COLUMN EMAIL WORKBENCH -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT / MAIN: Realistic Outlook / Corporate Mail Composer View (8 cols) -->
+<div class="lg:col-span-8 flex flex-col space-y-space-md">
+<div class="bg-surface-elevated border border-border-subtle rounded-xl overflow-hidden shadow-xl">
+<!-- Composer Window Titlebar -->
+<div class="bg-surface-overlay px-space-md py-2.5 border-b border-border-subtle flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+<span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
+<span class="text-text-muted text-xs font-mono ml-2">Microsoft 365 Exchange Gateway • Draft Message #D-8941</span>
+</div>
+<div class="flex items-center space-x-3 text-text-secondary font-label-caps text-label-caps">
+<span class="flex items-center text-accent-electric"><span class="material-symbols-outlined text-sm mr-1" data-icon="auto_awesome">auto_awesome</span> LLM Context Grounded</span>
+<span class="text-text-muted">|</span>
+<span>Encoding: UTF-8</span>
+</div>
+</div>
+<!-- Mail Headers (To, From, Subject) -->
+<div class="p-space-md border-b border-border-subtle bg-surface-elevated/70 flex flex-col space-y-3">
+<!-- To Field -->
+<div class="flex items-center">
+<span class="w-20 text-text-muted font-label-md text-label-md">To:</span>
+<div class="flex-1 flex items-center space-x-2">
+<div class="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-md bg-surface-canvas border border-border-prominent text-text-primary text-xs font-mono">
+<span class="material-symbols-outlined text-sm text-text-secondary" data-icon="account_circle">account_circle</span>
+<span class="font-medium text-text-primary">Daniel Whitaker</span>
+<span class="text-text-muted">&lt;d.whitaker@harbourline.co.uk&gt;</span>
+</div>
+<span class="text-xs text-text-muted font-label-caps">(Primary Onboarding Contact / MD)</span>
+</div>
+</div>
+<!-- From Field -->
+<div class="flex items-center">
+<span class="w-20 text-text-muted font-label-md text-label-md">From:</span>
+<div class="flex-1 flex items-center space-x-2">
+<div class="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-md bg-surface-canvas border border-border-subtle text-text-secondary text-xs font-mono">
+<span class="material-symbols-outlined text-sm text-accent-electric" data-icon="verified_user">verified_user</span>
+<span class="font-medium text-text-primary">Meera Shah</span>
+<span class="text-text-muted">&lt;m.shah@northgatebank.co.uk&gt;</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-overlay text-accent-violet font-sans text-[10px] font-semibold">via Copilot</span>
+</div>
+</div>
+</div>
+<!-- Subject Field -->
+<div class="flex items-center">
+<span class="w-20 text-text-muted font-label-md text-label-md">Subject:</span>
+<div class="flex-1">
+<div class="w-full px-3 py-1.5 rounded-md bg-surface-canvas border border-border-subtle text-text-primary font-headline-sm text-sm font-semibold tracking-tight">
+                    Harbourline Logistics: 5 items needed to complete onboarding (by Fri 20 Nov)
+                  </div>
+</div>
+</div>
+<!-- SLA Deadline Callout -->
+<div class="mt-2 bg-gradient-to-r from-accent-violet/20 via-surface-overlay to-surface-canvas border border-accent-violet/40 rounded-lg p-3 flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-8 h-8 rounded bg-accent-violet/30 flex items-center justify-center text-secondary-fixed">
+<span class="material-symbols-outlined text-lg" data-icon="calendar_clock">calendar_clock</span>
+</div>
+<div>
+<span class="text-xs font-label-caps text-secondary font-bold block">SLA DEADLINE CALLOUT</span>
+<span class="text-text-primary font-headline-sm text-sm font-bold">Response Deadline: Friday 20 November 2026 (One clear ask)</span>
+</div>
+</div>
+<div class="hidden sm:flex items-center space-x-2 text-xs text-text-secondary font-label-md">
+<span class="w-2 h-2 rounded-full bg-accent-electric"></span>
+<span>7 Business Days Remaining</span>
+</div>
+</div>
+</div>
+<!-- Composer Body Text -->
+<div class="p-space-lg bg-[#0e121a] text-on-surface font-body-md text-body-md leading-relaxed space-y-5 custom-scrollbar min-h-[500px]">
+<p>Dear Daniel,</p>
+<p>
+                Thank you for your application to establish institutional commercial facilities with Northgate Bank. We are eager to finalise your account setup and activate your credit line.
+              </p>
+<p>
+                To finalise our regulatory verification and ensure full compliance under UK Financial Conduct Authority and Prudential Regulation frameworks, we require <strong>5 specific documents</strong> across the entity and its major shareholding officers:
+              </p>
+<!-- Section: About the company -->
+<div class="bg-surface-elevated/70 border border-border-subtle rounded-lg p-4 space-y-3">
+<div class="flex items-center space-x-2 text-accent-electric font-headline-sm text-sm font-bold border-b border-border-subtle pb-2">
+<span class="material-symbols-outlined text-base" data-icon="corporate_fare">corporate_fare</span>
+<span>About the company (Harbourline Logistics Ltd)</span>
+</div>
+<ol class="list-decimal list-inside space-y-2 pl-1 text-sm text-text-primary">
+<li class="pl-1">
+<strong>Current shareholder register:</strong> A certified copy dated within the last 30 days demonstrating full beneficial distribution up to 100%.
+                  </li>
+<li class="pl-1">
+<strong>Complete company bank statement:</strong> Most recent consecutive 3-month statement (August – October 2026) showing business operating account turnover.
+                  </li>
+</ol>
+</div>
+<!-- Section: About Daniel Whitaker -->
+<div class="bg-surface-elevated/70 border border-border-subtle rounded-lg p-4 space-y-3">
+<div class="flex items-center space-x-2 text-accent-violet font-headline-sm text-sm font-bold border-b border-border-subtle pb-2">
+<span class="material-symbols-outlined text-base" data-icon="person">person</span>
+<span>About Daniel Whitaker (Director, 40% Shareholding)</span>
+</div>
+<ol class="list-decimal list-inside space-y-2 pl-1 text-sm text-text-primary" start="3">
+<li class="pl-1">
+<strong>Photo ID:</strong> Clear colour scan of valid UK/EU passport or UK biometric photocard driving licence.
+                  </li>
+<li class="pl-1">
+<strong>Proof of address:</strong> Residential utility bill or council tax statement issued within the last 90 calendar days.
+                  </li>
+</ol>
+</div>
+<!-- Section: About Alicia Moreno -->
+<div class="bg-surface-elevated/70 border border-border-subtle rounded-lg p-4 space-y-3">
+<div class="flex items-center space-x-2 text-[#c9beff] font-headline-sm text-sm font-bold border-b border-border-subtle pb-2">
+<span class="material-symbols-outlined text-base" data-icon="person_outline">person_outline</span>
+<span>About Alicia Moreno (Director, 30% Shareholding)</span>
+</div>
+<ol class="list-decimal list-inside space-y-2 pl-1 text-sm text-text-primary" start="5">
+<li class="pl-1">
+<strong>Photo ID and proof of address:</strong> Certified valid government photo identity document alongside an approved residential proof of address (utility/bank statement ≤ 3 months old).
+                  </li>
+</ol>
+</div>
+<!-- Vault Upload Section with Token Highlight -->
+<div class="bg-surface-overlay/80 border border-border-prominent rounded-lg p-4 space-y-2">
+<p class="font-semibold text-text-primary text-sm flex items-center">
+<span class="material-symbols-outlined text-accent-electric text-base mr-1.5" data-icon="cloud_upload">cloud_upload</span>
+                  How to securely deliver these files:
+                </p>
+<p class="text-sm">
+                  Please upload these items directly through Northgate's encrypted Client Document Vault using your single-tenant link below:
+                </p>
+<div class="py-2">
+<div class="p-2.5 rounded bg-surface-canvas border border-dashed border-amber-400/80 transition-all" id="emailTokenContainer">
+<span class="text-amber-300 font-mono text-sm font-bold tracking-wide" id="emailTokenText">[RM TO CONFIRM: upload link]</span>
+</div>
+</div>
+<p class="text-xs text-text-muted">
+                  Note: For your financial security, please do not email scanned identity credentials as unencrypted email attachments.
+                </p>
+</div>
+<p class="text-sm">
+                If you have any questions regarding alternative documentation or certification standards, please do not hesitate to contact me directly or reply to this thread.
+              </p>
+<!-- Sign-off Block -->
+<div class="pt-4 border-t border-border-subtle text-sm text-text-secondary space-y-1">
+<p class="text-text-primary font-medium">Warm regards,</p>
+<p class="text-text-primary font-bold text-base mt-2">Meera Shah</p>
+<p>Senior Relationship Manager • Institutional Client Group</p>
+<p>Northgate Bank Plc | London EC2V 8AR</p>
+<p class="text-xs text-text-muted mt-1">Direct: +44 20 7946 0842 | Case Reference: HL-2026-8941</p>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT: RM Confidential Notes & Diagnostics (4 cols) -->
+<div class="lg:col-span-4 flex flex-col space-y-space-md">
+<!-- Confidential RM Notes Card -->
+<div class="bg-surface-elevated border border-border-subtle rounded-xl p-space-md shadow-lg relative overflow-hidden">
+<div class="absolute top-0 right-0 transform translate-x-4 -translate-y-4 w-28 h-28 bg-accent-violet/10 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center justify-between pb-3 border-b border-border-subtle mb-4">
+<div class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-amber-400 text-lg" data-icon="lock">lock</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-text-primary text-base">RM Confidential Notes</h3>
+</div>
+<span class="px-2 py-0.5 rounded text-[10px] font-label-caps bg-red-500/10 text-red-400 border border-red-500/20 font-bold uppercase tracking-wider">Never Sent to Client</span>
+</div>
+<!-- Ownership Threshold Rule Breakdown -->
+<div class="space-y-4">
+<div class="bg-surface-canvas rounded-lg p-3 border border-border-subtle">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-caps text-label-caps text-accent-electric uppercase">Policy Rule Triggered</span>
+<span class="text-xs font-mono text-text-secondary">UBO-AML-2026</span>
+</div>
+<h4 class="font-headline-sm text-sm font-bold text-text-primary mb-1">Ownership Threshold Rule (70% Total)</h4>
+<p class="text-xs text-text-secondary leading-relaxed">
+                  Harbourline Logistics has a combined 70% shareholding between Daniel Whitaker (40%) and Alicia Moreno (30%). Because both individual holdings exceed the <strong>25% follow-on KYC trigger threshold</strong> under Northgate AML Policy §4.2, enhanced customer due diligence (EDD) requires photo ID and address verification for both directors prior to credit underwriting.
+                </p>
+</div>
+<!-- Cognitive Audit Trace Card -->
+<div class="bg-[#070A0F] rounded-lg p-3 border border-accent-violet/30 font-mono text-xs space-y-2">
+<div class="flex items-center justify-between text-secondary">
+<span class="font-label-caps text-label-caps text-text-muted">COGNITIVE AUDIT TRACE</span>
+<span class="text-accent-electric text-[11px] font-bold">KYC-88-BEN</span>
+</div>
+<div class="text-text-secondary space-y-1">
+<div class="flex justify-between">
+<span class="text-text-muted">Synthesis Model:</span>
+<span class="text-text-primary">Claude 3.7 Opus Guardrail-2</span>
+</div>
+<div class="flex justify-between">
+<span class="text-text-muted">Prompt Hash:</span>
+<span class="text-text-primary">0x9a8f...3e21</span>
+</div>
+<div class="flex justify-between">
+<span class="text-text-muted">Context Confidence:</span>
+<span class="text-accent-electric font-bold">99.4%</span>
+</div>
+<div class="flex justify-between">
+<span class="text-text-muted">Jargon Score:</span>
+<span class="text-accent-electric">0.02 (Ultra-clean)</span>
+</div>
+</div>
+</div>
+<!-- Word Count & Tone Diagnostics Bento -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<div class="bg-surface-canvas p-3 rounded-lg border border-border-subtle flex flex-col">
+<span class="text-text-muted font-label-caps text-label-caps">WORD COUNT</span>
+<span class="text-xl font-bold font-headline-sm text-text-primary mt-1">214 <span class="text-xs font-normal text-text-secondary">words</span></span>
+<span class="text-[10px] text-accent-electric mt-0.5 flex items-center">
+<span class="material-symbols-outlined text-xs mr-0.5" data-icon="check">check</span> Optimal (180-250)
+                  </span>
+</div>
+<div class="bg-surface-canvas p-3 rounded-lg border border-border-subtle flex flex-col">
+<span class="text-text-muted font-label-caps text-label-caps">TONE REGISTER</span>
+<span class="text-xl font-bold font-headline-sm text-text-primary mt-1">94%</span>
+<span class="text-[10px] text-accent-violet mt-0.5">Warm Institutional</span>
+</div>
+<div class="bg-surface-canvas p-3 rounded-lg border border-border-subtle flex flex-col">
+<span class="text-text-muted font-label-caps text-label-caps">READING TIME</span>
+<span class="text-xl font-bold font-headline-sm text-text-primary mt-1">52 <span class="text-xs font-normal text-text-secondary">sec</span></span>
+<span class="text-[10px] text-text-muted mt-0.5">C-Suite Scannable</span>
+</div>
+<div class="bg-surface-canvas p-3 rounded-lg border border-border-subtle flex flex-col">
+<span class="text-text-muted font-label-caps text-label-caps">CLARITY INDEX</span>
+<span class="text-xl font-bold font-headline-sm text-accent-electric mt-1">Grade 9.1</span>
+<span class="text-[10px] text-text-secondary mt-0.5">Zero Ambiguity</span>
+</div>
+</div>
+<!-- RM Internal Checklist Guidance -->
+<div class="p-3 rounded-lg bg-surface-overlay border border-border-subtle text-xs text-text-secondary space-y-1.5">
+<div class="font-bold text-text-primary flex items-center">
+<span class="material-symbols-outlined text-sm text-accent-electric mr-1" data-icon="info">info</span>
+                  RM Pre-Flight Guidance:
+                </div>
+<ul class="list-disc list-inside space-y-1 pl-1">
+<li>Verify that Daniel Whitaker has signing authority before releasing token.</li>
+<li>Alicia Moreno's proof of address must be under her personal residential name, not Harbourline Ltd.</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Quick Context / Precedent Box -->
+<div class="bg-surface-elevated border border-border-subtle rounded-xl p-space-md space-y-3">
+<span class="font-label-caps text-label-caps text-text-muted block">CASE CHRONOLOGY</span>
+<div class="space-y-2 font-body-md text-xs">
+<div class="flex items-start space-x-2">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-electric mt-1.5"></span>
+<span class="text-text-secondary"><strong class="text-text-primary">12 Nov 2026:</strong> Initial onboarding application lodged.</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5"></span>
+<span class="text-text-secondary"><strong class="text-text-primary">13 Nov 2026:</strong> Auto-triaged as missing 5 KYC/EDD elements.</span>
+</div>
+<div class="flex items-start space-x-2">
+<span class="w-1.5 h-1.5 rounded-full bg-accent-violet mt-1.5"></span>
+<span class="text-text-secondary"><strong class="text-text-primary">Today:</strong> Copilot drafted 1-request synthesis for RM review.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 5. BOTTOM ACTIONS BAR (Sticky bottom for rapid decisioning) -->
+<footer class="sticky bottom-0 bg-surface-canvas/90 backdrop-blur-md border border-border-prominent rounded-xl p-space-md flex flex-wrap items-center justify-between gap-4 z-30 shadow-[0_-8px_24px_rgba(0,0,0,0.5)]">
+<div class="flex items-center space-x-3">
+<button class="px-4 py-2 rounded-lg border border-border-prominent bg-surface-elevated text-text-primary hover:bg-surface-overlay hover:border-text-primary font-label-md text-label-md flex items-center space-x-2 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="edit">edit</span>
+<span>Edit Email</span>
+</button>
+<button class="px-4 py-2 rounded-lg border border-red-500/30 bg-surface-canvas text-red-400 hover:bg-red-500/10 font-label-md text-label-md flex items-center space-x-2 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="delete">delete</span>
+<span>Discard Draft</span>
+</button>
+</div>
+<div class="flex items-center space-x-4">
+<div class="hidden sm:flex items-center text-xs text-text-muted font-mono" id="tokenDispatchStatus">
+<span class="w-2 h-2 rounded-full bg-amber-400 mr-2 animate-ping"></span>
+<span>Dispatch Locked: 1 token pending confirmation</span>
+</div>
+<!-- Send Action Button (Initially Disabled/Locked) -->
+<button class="px-5 py-2.5 rounded-lg bg-surface-overlay text-text-muted font-bold font-label-md text-label-md flex items-center space-x-2 cursor-not-allowed opacity-60 transition-all" disabled="" id="btnSend">
+<span class="material-symbols-outlined text-lg" data-icon="lock" id="sendIcon">lock</span>
+<span id="sendLabel">Send from RM Mailbox (Waiting for token confirmation)</span>
+</button>
+</div>
+</footer>
+</main>
+</div>
+<!-- INTERACTIVE MICRO-INTERACTIONS JAVASCRIPT -->
+<script>
+    function autofillLink() {
+      const input = document.getElementById('vaultLinkInput');
+      input.value = "https://vault.northgatebank.co.uk/u/hl-8941-auth-req";
+      input.classList.add('ring-2', 'ring-accent-electric');
+      setTimeout(() => input.classList.remove('ring-2', 'ring-accent-electric'), 600);
+    }
+
+    function resolveToken() {
+      const input = document.getElementById('vaultLinkInput');
+      const resolvedUrl = input.value.trim() || "https://vault.northgatebank.co.uk/u/hl-8941-auth-req";
+
+      // 1. Update composer token text and container
+      const tokenContainer = document.getElementById('emailTokenContainer');
+      const tokenText = document.getElementById('emailTokenText');
+      
+      tokenContainer.className = "p-2.5 rounded bg-surface-elevated border border-accent-electric/50 flex items-center justify-between";
+      tokenText.outerHTML = `<a href="${resolvedUrl}" target="_blank" class="text-accent-electric font-mono text-sm underline font-medium hover:text-white flex items-center space-x-1.5"><span class="material-symbols-outlined text-sm">link</span><span>${resolvedUrl}</span></a><span class="px-2 py-0.5 rounded text-[10px] font-label-caps bg-accent-electric/15 text-accent-electric font-bold border border-accent-electric/30">CONFIRMED &bull; TOKEN RESOLVED</span>`;
+
+      // 2. Hide or style the warning banner
+      const warningBanner = document.getElementById('warningBanner');
+      warningBanner.className = "bg-gradient-to-r from-accent-electric/10 via-surface-elevated to-surface-elevated border-l-4 border-l-accent-electric border border-accent-electric/30 rounded-xl p-space-md shadow-md flex flex-col md:flex-row md:items-center justify-between gap-4 transition-all";
+      warningBanner.innerHTML = `
+        <div class="flex items-center space-x-3.5">
+          <div class="w-10 h-10 rounded-lg bg-accent-electric/20 text-accent-electric flex items-center justify-center shrink-0 border border-accent-electric/40">
+            <span class="material-symbols-outlined text-2xl" data-icon="verified">verified</span>
+          </div>
+          <div class="flex flex-col">
+            <div class="flex items-center space-x-2">
+              <span class="font-headline-sm text-headline-sm font-bold text-accent-electric">Token Resolved & Approved</span>
+              <span class="px-2 py-0.5 rounded text-label-caps font-label-caps bg-accent-electric/20 text-accent-electric border border-accent-electric/30 font-semibold">Ready for RM Dispatch</span>
+            </div>
+            <p class="text-text-secondary font-body-md text-body-md mt-0.5">
+              Secure client vault link verified: <code class="bg-surface-canvas text-accent-electric px-1.5 py-0.5 rounded font-mono text-xs border border-accent-electric/30">${resolvedUrl}</code>. Dispatch lock released.
+            </p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-2">
+          <span class="text-xs text-text-muted font-mono">Status: Ready</span>
+        </div>
+      `;
+
+      // 3. Unlock bottom send button
+      const sendBtn = document.getElementById('btnSend');
+      sendBtn.disabled = false;
+      sendBtn.className = "px-6 py-2.5 rounded-lg bg-accent-electric text-surface-canvas font-bold font-label-md text-label-md flex items-center space-x-2 cursor-pointer shadow-[0_0_20px_rgba(2,245,118,0.35)] hover:brightness-105 transition-all";
+      
+      const sendIcon = document.getElementById('sendIcon');
+      sendIcon.setAttribute('data-icon', 'send');
+      sendIcon.textContent = 'send';
+      
+      const sendLabel = document.getElementById('sendLabel');
+      sendLabel.textContent = 'Send from RM Mailbox (m.shah@northgatebank.co.uk)';
+
+      // 4. Update status text
+      const statusText = document.getElementById('tokenDispatchStatus');
+      statusText.innerHTML = '<span class="w-2 h-2 rounded-full bg-accent-electric mr-2"></span><span class="text-accent-electric">Dispatch unlocked by RM</span>';
+    }
+  </script>
+</body></html>

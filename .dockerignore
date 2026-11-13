@@ -1,0 +1,17 @@
+.venv
+venv
+ENV
+__pycache__
+*.py[cod]
+*$py.class
+.pytest_cache
+.coverage
+htmlcov
+.git
+.gitignore
+.github
+node_modules
+frontend/node_modules
+.env
+.env.local
+*.log
