@@ -27,6 +27,8 @@ npm-debug.log*
 *.key
 *.pem
 credentials.json
+gcp-key.json
+.gcloud/
 
 # Operating System & IDE
 .DS_Store
