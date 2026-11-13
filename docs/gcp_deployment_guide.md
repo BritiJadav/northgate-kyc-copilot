@@ -47,7 +47,7 @@ In the **Cloud Shell terminal**, paste the following block. Replace `YOUR_PROJEC
 ```bash
 # Set your project ID
 export PROJECT_ID="YOUR_PROJECT_ID"
-export REGION="us-central1"
+export REGION="asia-south1"
 export SA_NAME="github-actions-deployer"
 
 gcloud config set project $PROJECT_ID
@@ -162,7 +162,7 @@ If you want to deploy right now without setting up GitHub secrets first:
    ```bash
    gcloud run deploy northgate-kyc-copilot \
        --source . \
-       --region us-central1 \
+       --region asia-south1 \
        --allow-unauthenticated \
        --port 8080
    ```

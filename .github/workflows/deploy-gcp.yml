@@ -8,10 +8,10 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
-  GAR_LOCATION: us-central1
+  GAR_LOCATION: asia-south1
   GAR_REPOSITORY: northgate-repo
   SERVICE_NAME: northgate-kyc-copilot
-  REGION: us-central1
+  REGION: asia-south1
 
 jobs:
   test-and-deploy:
